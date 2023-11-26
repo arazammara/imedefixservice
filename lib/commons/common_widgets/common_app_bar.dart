@@ -1,14 +1,17 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:idaawee/commons/common_imports/common_libs.dart';
 import 'package:idaawee/utils/constants/font_manager.dart';
 
 class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String appBarTitle;
   final VoidCallback? onPressed;
+  final Color? backgroundColor;
   const CommonAppBar({
-    super.key,
+    Key? key,
     required this.appBarTitle,
     this.onPressed,
-  });
+    this.backgroundColor,
+  }) : super(key: key);
 
   @override
   Size get preferredSize => const Size.fromHeight(55);
@@ -16,7 +19,8 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor:
+          backgroundColor ?? const Color(0xff38B698).withOpacity(0.1),
       leading: IconButton(
         onPressed: onPressed ?? () => Navigator.pop(context),
         icon: Icon(

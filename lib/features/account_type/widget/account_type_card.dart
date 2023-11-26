@@ -1,3 +1,4 @@
+import 'package:idaawee/commons/common_functions/padding.dart';
 import 'package:idaawee/commons/common_imports/common_libs.dart';
 import 'package:idaawee/utils/constants/font_manager.dart';
 
@@ -25,76 +26,56 @@ class AccountTypeCard extends StatelessWidget {
       borderRadius: BorderRadius.circular(16),
       onTap: onTap,
       child: Container(
-        height: 212.h,
-        width: 134.w,
+        height: 187.h,
+        width: 345.w,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: MyColors.borderColor),
+          borderRadius: BorderRadius.circular(10.r),
+          color: MyColors.lightgrey,
+          border: Border.all(
+              color: selectIndex == index
+                  ? MyColors.appColor
+                  : MyColors.lightgrey),
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(9.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                height: 20.h,
-                width: 20.h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  border: Border.all(
-                      color: selectIndex == index
-                          ? MyColors.switchColor
-                          : MyColors.borderColor),
+        child: Row(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 22),
+                  child: Text(
+                    title,
+                    style: getBoldStyle(
+                        color: MyColors.black, fontSize: MyFonts.size18),
+                  ),
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      height: 12.h,
-                      width: 12.h,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: selectIndex == index
-                            ? MyColors.switchColor
-                            : Colors.transparent,
+                padding10,
+                SizedBox(
+                  child: SizedBox(
+                    width: 175.w,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 22),
+                      child: Text(
+                        subTitle,
+                        style: getSemiBoldStyle(
+                            color: MyColors.accountTypeTextColor,
+                            fontSize: MyFonts.size14),
                       ),
                     ),
-                  ],
+                  ),
                 ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 15),
+              child: Image.asset(
+                image,
+                height: 176.h,
+                width: 148.w,
               ),
-              SizedBox(
-                height: 5.h,
-              ),
-              Center(
-                child: Image.asset(
-                  image,
-                  height: 62.h,
-                  width: 57.w,
-                ),
-              ),
-              SizedBox(
-                height: 14.h,
-              ),
-              Center(
-                child: Text(
-                  title,
-                  style: getBoldStyle(
-                      color: MyColors.black, fontSize: MyFonts.size16),
-                ),
-              ),
-              SizedBox(
-                height: 8.h,
-              ),
-              Center(
-                child: Text(
-                  subTitle,
-                  style: getSemiBoldStyle(
-                      color: MyColors.accountTypeTextColor,
-                      fontSize: MyFonts.size12),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

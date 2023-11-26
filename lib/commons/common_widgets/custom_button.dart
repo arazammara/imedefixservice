@@ -36,13 +36,18 @@ class CustomButton extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: padding ?? 10.h),
       child: RawMaterialButton(
         elevation: 2,
-        fillColor:
-            backColor ?? MyColors.themeOrangeColor,
+        fillColor: backColor ?? MyColors.white,
         onPressed: onPressed,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 190.r),
         ),
-        child: SizedBox(
+        child: Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(borderRadius ?? 190.r),
+              gradient: const LinearGradient(colors: [
+                MyColors.appColor1,
+                MyColors.appColor,
+              ])),
           // padding: EdgeInsets.symmetric(vertical: 10.h),
           width: buttonWidth ?? double.infinity,
           height: buttonHeight ?? 56.h,

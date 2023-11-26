@@ -64,6 +64,7 @@ dependencies:
   dropdown_model_list: ^0.0.8
   expansion_tile_card: ^3.0.0
   bottom_sheet: ^4.0.0
+  country_code_picker: ^3.0.0
   
  
 

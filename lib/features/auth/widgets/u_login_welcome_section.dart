@@ -5,44 +5,53 @@ import 'package:idaawee/features/auth/widgets/u_social_button_card.dart';
 import 'package:idaawee/utils/constants/assets_manager.dart';
 import 'package:idaawee/utils/constants/font_manager.dart';
 
-class ULoginWelcomeSection extends StatelessWidget {
-  const ULoginWelcomeSection({super.key});
+class ULoginBottomSection extends StatelessWidget {
+  const ULoginBottomSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w),
-      child: Column(
-        children: [
-          Text(
-            welcomback,
-            style:
-                getMediumStyle(color: MyColors.black, fontSize: MyFonts.size24),
-          ),
-          padding16,
-          Text(
-            pleaselogin,
-            style: getRegularStyle(
-                color: MyColors.loginScreenTextColor, fontSize: MyFonts.size14),
-          ),
-          padding90,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              USocialButtonCard(
-                onTap: () {},
-                image: AppAssets.google,
-                text: google,
+    return Column(
+      children: [
+        padding16,
+        Row(
+          children: [
+            Expanded(
+                child: Container(
+              height: 1.5.h,
+              color: MyColors.lightgrey,
+            )),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Text(
+                'Or Continue With',
+                style: getMediumStyle(
+                    color: MyColors.grey, fontSize: MyFonts.size14),
               ),
-              USocialButtonCard(
-                onTap: () {},
-                image: AppAssets.facebook,
-                text: facebook,
-              )
-            ],
-          ),
-        ],
-      ),
+            ),
+            Expanded(
+                child: Container(
+              height: 1.5.h,
+              color: MyColors.lightgrey,
+            )),
+          ],
+        ),
+        padding20,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            USocialButtonCard(
+              onTap: () {},
+              image: AppAssets.facebook,
+              text: facebook,
+            ),
+            USocialButtonCard(
+              onTap: () {},
+              image: AppAssets.google,
+              text: google,
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

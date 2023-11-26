@@ -1,7 +1,5 @@
-import 'package:date_picker_timeline/extra/color.dart';
 import 'package:idaawee/routes/route_manager.dart';
 import 'package:idaawee/utils/constants/assets_manager.dart';
-import 'package:idaawee/utils/constants/font_manager.dart';
 
 import '../../../commons/common_imports/common_libs.dart';
 

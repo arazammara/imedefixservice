@@ -85,9 +85,19 @@ class AppAssets {
   static const String dlab = '$iconPath/dlab.png';
   static const String dpharmacy = '$iconPath/dpharmacy.png';
   static const String dappointment = '$iconPath/dappointment.png';
+  static const String key = '$iconPath/key.png';
+  static const String email = '$iconPath/email.png';
+  static const String calender = '$iconPath/calendar.png';
+  static const String arrow_down = '$iconPath/arrow_down.png';
 
   // Images Paths
   static const String bgImage = '$imagesPath/bg_image.jpg';
+  static const String homeBg = '$imagesPath/homeBg.png';
+  static const String bgGradient = '$imagesPath/bg_gradient.png';
+  static const String loginBg = '$imagesPath/login_bg.png';
+  static const String intro = '$imagesPath/intro.png';
+  static const String asPatient = '$imagesPath/as_patient.png';
+  static const String asDoctor = '$imagesPath/as_doctor.png';
   static const String prem = '$imagesPath/prem.png';
   static const String splash_1 = '$imagesPath/splash_1.png';
   static const String splash_2 = '$imagesPath/splash_2.png';

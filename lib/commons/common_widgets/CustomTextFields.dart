@@ -85,11 +85,9 @@ class CustomTextField extends StatelessWidget {
             border: Border.all(
                 color: MyColors.loginScreenTextColor.withOpacity(0.16),
                 width: 1.w),
-            borderRadius: BorderRadius.circular(12.r),
+            borderRadius: BorderRadius.circular(100.r),
           ),
           child: TextFormField(
-            
-
             onTap: onTap,
             maxLines: maxLines != null ? maxLines : 1,
             validator: validatorFn,
@@ -101,35 +99,42 @@ class CustomTextField extends StatelessWidget {
             decoration: InputDecoration(
               contentPadding: trailingIconPath != null
                   ? EdgeInsets.only(top: 15, left: 20.w)
-                  : EdgeInsets.symmetric(horizontal: 20.w),
-              prefixIcon: leadingIconPath != null
-                  ? Padding(
-                      padding: EdgeInsets.all(13.0.h),
-                      child: Image.asset(
-                        leadingIconPath!,
-                        width: 15.w,
-                        height: 15.h,
-                      ),
-                    )
-                  : null,
+                  : EdgeInsets.only(left: 30.w, top: 15.h),
+              prefixIcon: leadingIcon ??
+                  (leadingIconPath != null
+                      ? Padding(
+                          padding: EdgeInsets.only(
+                              top: 13.0.h,
+                              bottom: 11.h,
+                              left: 12.w,
+                              right: 5.w),
+                          child: Image.asset(
+                            leadingIconPath!,
+                            width: 15.w,
+                            height: 15.h,
+                            color: MyColors.black,
+                          ),
+                        )
+                      : null),
               errorStyle: getRegularStyle(
                   fontSize: MyFonts.size10,
                   color: Theme.of(context).colorScheme.error),
               suffixIcon: trailingIconPath != null
                   ? Padding(
-                      padding: EdgeInsets.all(17.0.h),
+                      padding: EdgeInsets.only(
+                          top: 16.0.h, bottom: 11.h, right: 12.w, left: 12.w),
                       child: Image.asset(
                         trailingIconPath!,
                         width: 15.w,
                         height: 15.h,
+                        color: MyColors.grey,
                       ),
                     )
                   : null,
 
               hintText: hintText,
-              hintStyle: getLightStyle(
-                  fontSize: MyFonts.size16,
-                  color: hintColor ?? MyColors.loginScreenTextColor),
+              hintStyle: getSemiBoldStyle(
+                  fontSize: MyFonts.size16, color: hintColor ?? MyColors.grey),
               // enabledBorder: OutlineInputBorder(
               //   borderRadius: BorderRadius.circular(10.r),
               // ),

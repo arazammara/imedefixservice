@@ -22,7 +22,8 @@ class USocialButtonCard extends StatelessWidget {
         width: 160.w,
         decoration: BoxDecoration(
             color: MyColors.white,
-            borderRadius: BorderRadius.circular(12.r),
+            borderRadius: BorderRadius.circular(100.r),
+            border: Border.all(color: MyColors.lightgrey, width: 1),
             boxShadow: [
               BoxShadow(
                 color: MyColors.black.withOpacity(0.02),

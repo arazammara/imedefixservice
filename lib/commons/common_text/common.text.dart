@@ -1,14 +1,16 @@
-const String onBoardingScreens1 = '24 Hour Services for Patients';
+const String onBoardingScreens1 = 'More Comfortable Chat With the Doctor';
+const String subonBoardingScreens1 =
+    'Book an appointment with doctor. Chat with doctor via appointment letter and get consultation.';
 const String onBoardingScreens2 = 'Take Prescriptions from a Doctor';
 const String onBoardingScreens3 = 'Take Prescriptions from a Doctor';
 const String skip = 'Skip';
 const String next = 'Next';
 const String accountType = 'Type of Account';
-const String patient = 'Patient';
+const String patient = 'I am a patient';
 const String patientDec =
     'Find a doctor online, access medical records, and more';
-const String doctor = 'Doctor';
-const String doctorDec = 'The easiest way to reach your patients face-to-face';
+const String doctor = 'I am a doctor';
+const String doctorDec = 'The easy way to reach your patients face-to- face.';
 const String welcomback = 'Welcome Back';
 const String justjoin = 'Join us to start searching';
 const String createAcountToGetStart = 'Create account to get start ed now!';
@@ -463,9 +465,11 @@ const String uploadcertificatepicture = 'Upload certificate picture:';
 const String doctorname = 'Doctor name';
 const String doctorEmail = 'Doctor Email';
 const String workedonlinebefore = 'Worked online before?';
-const String howmanyyearsofexperienceyouhave = 'How many years of experience you have?';
+const String howmanyyearsofexperienceyouhave =
+    'How many years of experience you have?';
 const String areyouavailableimidiately = 'Are you available imidiately?';
 const String uploadpicture = 'Upload picture:';
 const String pendingApproval = 'Pending Approval';
-const String approved = 'Your request has been sent to the admin, once it will approve, you will be able to create services and offers';
+const String approved =
+    'Your request has been sent to the admin, once it will approve, you will be able to create services and offers';
 const String submiforreview = 'Submit for Review';

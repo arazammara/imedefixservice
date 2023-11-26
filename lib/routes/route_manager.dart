@@ -25,6 +25,7 @@ import 'package:idaawee/features/user/appointment/view/user_confirm_appointment_
 import 'package:idaawee/features/user/consulation/view/consulation_payment_screen.dart';
 import 'package:idaawee/features/user/consulation/view/speciallized_quick_video_consultation_screen.dart';
 import 'package:idaawee/features/user/consulation/view/user_consulation_screen.dart';
+import 'package:idaawee/features/user/our_speciallist/view/user_our_speciallist_screen.dart';
 import 'package:idaawee/features/user/user_check_out_order_history/view/user_check_out_appointment_screen.dart';
 import 'package:idaawee/features/user/user_check_out_order_history/view/user_check_out_consulation_screen.dart';
 import 'package:idaawee/features/user/user_check_out_order_history/view/user_check_out_labtest_screen.dart';
@@ -71,6 +72,8 @@ class AppRoutes {
   static const String loginScreen = '/loginScreen';
 
   // User Portion
+  static const String userSpecialListScreen = '/userSpecialListScreen';
+
   static const String userHomeScreen = '/userHomeScreen';
   static const String userMainMenuScreen = '/userMainMenuScreen';
   static const String doctorListScreen = '/doctorListScreen';
@@ -117,6 +120,7 @@ class AppRoutes {
       '/userTermAndConditionScreen';
   static const String consulationPaymentScreen = 'consulationPaymentScreen';
   static const String offerSuccessfullScreen = '/offerSuccessfullScreen';
+
   // Doctor portion
 
   /// Doctor Section
@@ -143,6 +147,8 @@ class AppRoutes {
     switch (settings.name) {
       case signUpScreen:
         return _buildRoute(const UserSignUpScreen());
+      case userSpecialListScreen:
+        return _buildRoute(const UserOurSpecialListScreen());
       case loginScreen:
         return _buildRoute(const UserLoginScreen());
       case splashScreen:
@@ -279,7 +285,7 @@ class AppRoutes {
       case doctorMainMenu:
         return _buildRoute(const DoctorMainMenuScreen());
       case doctorPharmacyOfferScreen:
-        return _buildRoute( DoctorPharmacyOfferScreen());
+        return _buildRoute(DoctorPharmacyOfferScreen());
 
       default:
         return unDefinedRoute();

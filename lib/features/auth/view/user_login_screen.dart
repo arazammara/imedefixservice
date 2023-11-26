@@ -1,13 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:idaawee/commons/common_functions/padding.dart';
-import 'package:idaawee/commons/common_text/common.text.dart';
-import 'package:idaawee/commons/common_widgets/CustomTextFields.dart';
-import 'package:idaawee/commons/common_widgets/common_pass_text_field.dart';
-import 'package:idaawee/commons/common_widgets/custom_button.dart';
-import 'package:idaawee/features/auth/widgets/u_login_forget_password_section.dart';
-import 'package:idaawee/features/auth/widgets/u_login_welcome_section.dart';
-import 'package:idaawee/routes/route_manager.dart';
+import 'package:idaawee/features/auth/widgets/tab_login.dart';
+import 'package:idaawee/features/auth/widgets/tab_signin.dart';
 import 'package:idaawee/utils/constants/assets_manager.dart';
+import 'package:idaawee/utils/constants/font_manager.dart';
 import '../../../commons/common_imports/common_libs.dart';
 
 class UserLoginScreen extends StatefulWidget {
@@ -17,128 +12,163 @@ class UserLoginScreen extends StatefulWidget {
   State<UserLoginScreen> createState() => _UserLoginScreenState();
 }
 
-class _UserLoginScreenState extends State<UserLoginScreen> {
-  final emailController = TextEditingController();
-  final forgotPassCtr = TextEditingController();
-  final passwordController = TextEditingController();
-  bool passObscure = true;
-  final _formKey = GlobalKey<FormState>();
+class _UserLoginScreenState extends State<UserLoginScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    _tabController = TabController(length: 2, vsync: this);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _tabController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+    return WillPopScope(
+      onWillPop: () {
+        Navigator.pop(context);
+        return Future.value(false);
+      },
+      child: Scaffold(
         body: Container(
-          height: 1.sh,
-          width: 1.sw,
           decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(AppAssets.bgImage), fit: BoxFit.cover)),
-          child: SingleChildScrollView(
-            child: Form(
-              key: _formKey,
-              child: Column(
-                children: [
-                  padding127,
-                  const ULoginWelcomeSection(),
-                  padding35,
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: CustomTextField(
-                      validatorFn: (value) {
-                        if (value!.isEmpty) {
-                          return 'Please enter your email';
-                        }
-                        return null;
-                      },
-                      trailingIconPath: AppAssets.tick,
-                      texfieldHeight: 54.h,
-                      controller: emailController,
-                      hintText: 'Email',
-                      onChanged: (value) {},
-                      onFieldSubmitted: (value) {},
-                      obscure: false,
-                      label: '',
-                      subTitle: '',
-                    ),
-                  ),
-                  padding8,
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: CommonPassTextField(
-                      validatorFn: (value) {
-                        if (value!.isEmpty) {
-                          return 'Please enter your password';
-                        }
-                        return null;
-                      },
-                      tailingIcon: passObscure == false
-                          ? InkWell(
-                              onTap: () {
-                                setState(() {
-                                  passObscure = !passObscure;
-                                });
-                              },
-                              child: Icon(
-                                CupertinoIcons.eye,
-                                color: MyColors.themebBluishGreyColor,
-                                size: 14.sp,
-                              ))
-                          : InkWell(
-                              onTap: () {
-                                setState(() {
-                                  passObscure = !passObscure;
-                                });
-                              },
-                              child: Icon(CupertinoIcons.eye_slash,
-                                  color: MyColors.themebBluishGreyColor,
-                                  size: 14.sp)),
-                      texfieldHeight: 54.h,
-                      controller: passwordController,
-                      hintText: 'Password',
-                      onChanged: (value) {},
-                      onFieldSubmitted: (value) {},
-                      obscure: passObscure,
-                      label: '',
-                      subTitle: '',
-                    ),
-                  ),
-                  padding24,
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 40),
-                    child: CustomButton(
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          Navigator.pushNamed(
-                              context, AppRoutes.userMainMenuScreen);
-                        }
-                      },
-                      buttonText: login,
-                      fontSize: 18,
-                      borderRadius: 12,
-                      backColor: MyColors.appColor,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 40),
-                    child: CustomButton(
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          Navigator.pushNamed(
-                              context, AppRoutes.doctorMainMenu);
-                        }
-                      },
-                      buttonText: 'Login As Doctor',
-                      fontSize: 18,
-                      borderRadius: 12,
-                      backColor: MyColors.appColor,
-                    ),
-                  ),
-                  ULoginForgetPasswordSection(),
-                ],
-              ),
-            ),
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  MyColors.appColor1,
+                  MyColors.appColor,
+                ]),
           ),
-        ));
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                flex: 2,
+                child: SizedBox(
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 90.w, top: 50.h),
+                        child: Image.asset(
+                          AppAssets.loginBg,
+                          height: 272.h,
+                          width: 307.7.w,
+                          color: MyColors.white.withOpacity(0.1),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 50),
+                        child: Image.asset(
+                          AppAssets.bgGradient,
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 20.h,
+                        child: Padding(
+                          padding: const EdgeInsets.all(18.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Go Ahead & Set Up\nYour Account',
+                                style: getBoldStyle(
+                                    color: MyColors.white,
+                                    fontSize: MyFonts.size26),
+                              ),
+                              padding10,
+                              Text(
+                                'Sign In-Up To Enjoy The Best Doctor\nConsultation Experience',
+                                style: getSemiBoldStyle(
+                                    color: MyColors.white,
+                                    fontSize: MyFonts.size14),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 4,
+                child: Container(
+                  width: 1.sw,
+                  decoration: const BoxDecoration(
+                    color: MyColors.lightBg,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30)),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(18.0),
+                    child: Column(
+                      children: [
+                        Container(
+                          height: 60.h,
+                          decoration: BoxDecoration(
+                            color: MyColors.lightgrey,
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                          child: TabBar(
+                            indicatorPadding: EdgeInsets.zero,
+                            dividerColor: Colors.transparent,
+                            indicatorColor: Colors.transparent,
+                            controller: _tabController,
+                            // give the indicator a decoration (color and border radius)
+                            indicator: BoxDecoration(
+                              gradient: const LinearGradient(colors: [
+                                MyColors.appColor1,
+                                MyColors.appColor,
+                              ]),
+                              borderRadius: BorderRadius.circular(
+                                25.0,
+                              ),
+                              color: Colors.green,
+                            ),
+                            labelColor: MyColors.white,
+                            unselectedLabelColor: MyColors.grey,
+                            padding: const EdgeInsets.symmetric(vertical: 5),
+                            tabs: [
+                              Tab(
+                                child: SizedBox(
+                                  width: 170.w,
+                                  child: const Center(child: Text('Login')),
+                                ),
+                              ),
+                              Tab(
+                                child: SizedBox(
+                                  width: 170.w,
+                                  child: const Center(child: Text('Sign up')),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                            child: TabBarView(
+                          controller: _tabController,
+                          children: const [
+                            TabLogin(),
+                            TabSignIn(),
+                          ],
+                        ))
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

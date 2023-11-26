@@ -4,6 +4,7 @@ class MyColors {
   //common colors
   static const Color appColor = Color(0xFF00A69D);
   static const Color appColor1 = Color(0xFF5EEF8F);
+  static const Color lightBg = Color(0xFFF6FBFA);
   static const Color transparentColor = Colors.transparent;
   static const Color blackColor = Color(0xFF000000);
   static const Color whiteColor = Color(0xFFFFFFFF);
@@ -19,7 +20,7 @@ class MyColors {
   static const Color loginScreenTextColor = Color(0xFF677294);
   static const Color labCardInnerColor = Color(0xFF6A7380);
   static const Color greyBottom = Color(0xFFC4C4C4);
-  static const Color grey = Color(0xFF858585);
+  static const Color grey = Color(0xFF888888);
   static const Color black94 = Color(0xFF09121F);
   static const Color blueaccent = Color(0xFF3B4C6B);
   static const Color bottomBarColor = Color(0xFFF8F8F8);
