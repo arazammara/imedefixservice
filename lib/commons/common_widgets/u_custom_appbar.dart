@@ -2,7 +2,6 @@ import 'package:idaawee/commons/common_functions/padding.dart';
 import 'package:idaawee/commons/common_imports/common_libs.dart';
 import 'package:idaawee/utils/constants/font_manager.dart';
 
-import '../../features/user/home/widget/home_search_widget.dart';
 
 class UCustomAppBar extends StatelessWidget {
   final VoidCallback onSearchTap;
@@ -113,7 +112,7 @@ class UCustomAppBar extends StatelessWidget {
                           offset: const Offset(1, 3),
                         ),
                       ]),
-                  child: const HomeSearchWidget()),
+                  child:  Container()),
             ),
           ),
         ],
