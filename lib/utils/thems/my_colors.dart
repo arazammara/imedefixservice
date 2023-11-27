@@ -44,6 +44,7 @@ class MyColors {
   static const Color lightBlue = Color(0xff006EE9);
   static const Color profilegrey = Color(0xff515151);
   static const Color notificationColor = Color(0xffE5E9EB);
+  static const Color ratingColor = Color(0xffFFD33C);
 
   //dark theme Colors
   static const Color darkThemeColor = Color(0xFF000000);

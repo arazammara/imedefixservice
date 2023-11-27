@@ -1,6 +1,7 @@
 import 'package:idaawee/commons/common_functions/padding.dart';
 import 'package:idaawee/commons/common_imports/apis_commons.dart';
 import 'package:idaawee/commons/common_imports/common_libs.dart';
+import 'package:idaawee/routes/route_manager.dart';
 import 'package:idaawee/utils/constants/font_manager.dart';
 
 // ignore: must_be_immutable
@@ -37,10 +38,15 @@ class UOurSpecializationWidget extends ConsumerWidget {
                 style: getBoldStyle(
                     color: MyColors.black, fontSize: MyFonts.size16),
               ),
-              Text(
-                'See All',
-                style: getBoldStyle(
-                    color: MyColors.appColor, fontSize: MyFonts.size16),
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, AppRoutes.userSpecialListScreen);
+                },
+                child: Text(
+                  'See All',
+                  style: getBoldStyle(
+                      color: MyColors.appColor, fontSize: MyFonts.size16),
+                ),
               )
             ],
           ),

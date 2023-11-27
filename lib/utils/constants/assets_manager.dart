@@ -7,6 +7,10 @@ class AppAssets {
   static const String profile = '$iconPath/profile.png';
   static const String report = '$iconPath/report.png';
   static const String hand = '$iconPath/hand.png';
+  static const String delete = '$iconPath/delete.png';
+  static const String update = '$iconPath/update.png';
+  static const String download = '$iconPath/download.png';
+  static const String pdf = '$iconPath/pdf.png';
 
   static const String patient = '$iconPath/patient.png';
   static const String doctor = '$iconPath/doctor.png';
@@ -93,9 +97,16 @@ class AppAssets {
   static const String email = '$iconPath/email.png';
   static const String calender = '$iconPath/calendar.png';
   static const String arrow_down = '$iconPath/arrow_down.png';
+  static const String clock = '$iconPath/clock.png';
+  static const String cal = '$iconPath/cal.png';
+  static const String bloodRep = '$iconPath/blood_rep.png';
+  static const String ctscan = '$iconPath/ctscan.png';
+  static const String mri = '$iconPath/mri.png';
 
   // Images Paths
   static const String bgImage = '$imagesPath/bg_image.jpg';
+  static const String silver = '$imagesPath/silver.png';
+  static const String gold = '$imagesPath/gold.png';
   static const String homeBg = '$imagesPath/homeBg.png';
   static const String bgGradient = '$imagesPath/bg_gradient.png';
   static const String loginBg = '$imagesPath/login_bg.png';

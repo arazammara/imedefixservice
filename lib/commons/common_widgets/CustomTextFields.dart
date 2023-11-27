@@ -22,6 +22,7 @@ class CustomTextField extends StatelessWidget {
   final String subTitle;
   final Function()? subTitleOnTap;
   final Function()? onTap;
+  final double? radius;
 
   const CustomTextField(
       {Key? key,
@@ -44,7 +45,8 @@ class CustomTextField extends StatelessWidget {
       this.maxLines,
       required this.subTitle,
       this.onTap,
-      this.subTitleOnTap})
+      this.subTitleOnTap,
+      this.radius})
       : super(key: key);
 
   @override
@@ -59,8 +61,11 @@ class CustomTextField extends StatelessWidget {
                 ? Text(
                     label,
                     style: getSemiBoldStyle(
-                        fontSize: MyFonts.size14,
-                        color: MyColors.checkboxColor),
+                        fontSize:
+                            radius != null ? MyFonts.size18 : MyFonts.size14,
+                        color: radius != null
+                            ? MyColors.black
+                            : MyColors.checkboxColor),
                   )
                 : Container(),
             subTitle != ''
@@ -85,7 +90,7 @@ class CustomTextField extends StatelessWidget {
             border: Border.all(
                 color: MyColors.loginScreenTextColor.withOpacity(0.16),
                 width: 1.w),
-            borderRadius: BorderRadius.circular(100.r),
+            borderRadius: BorderRadius.circular(radius ?? 100.r),
           ),
           child: TextFormField(
             onTap: onTap,
@@ -99,7 +104,8 @@ class CustomTextField extends StatelessWidget {
             decoration: InputDecoration(
               contentPadding: trailingIconPath != null
                   ? EdgeInsets.only(top: 15, left: 20.w)
-                  : EdgeInsets.only(left: 30.w, top: 15.h),
+                  : EdgeInsets.only(
+                      left: 30.w, top: radius != null ? 8.h : 15.h),
               prefixIcon: leadingIcon ??
                   (leadingIconPath != null
                       ? Padding(

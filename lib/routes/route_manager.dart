@@ -26,6 +26,7 @@ import 'package:idaawee/features/user/consulation/view/consulation_payment_scree
 import 'package:idaawee/features/user/consulation/view/speciallized_quick_video_consultation_screen.dart';
 import 'package:idaawee/features/user/consulation/view/user_consulation_screen.dart';
 import 'package:idaawee/features/user/our_speciallist/view/user_our_speciallist_screen.dart';
+import 'package:idaawee/features/user/report/view/add_report_screen.dart';
 import 'package:idaawee/features/user/user_check_out_order_history/view/user_check_out_appointment_screen.dart';
 import 'package:idaawee/features/user/user_check_out_order_history/view/user_check_out_consulation_screen.dart';
 import 'package:idaawee/features/user/user_check_out_order_history/view/user_check_out_labtest_screen.dart';
@@ -37,14 +38,11 @@ import 'package:idaawee/features/user/consulation/view/add_medical_record_screen
 import 'package:idaawee/features/user/consulation/view/add_record_screen.dart';
 import 'package:idaawee/features/user/doctor_list/view/user_doctor_list.dart';
 import 'package:idaawee/features/user/home/view/user_home_screen.dart';
-import 'package:idaawee/features/user/lab_screen/view/user_lab_screen.dart';
-import 'package:idaawee/features/user/lab_screen/view/order_lab_page.dart';
-import 'package:idaawee/features/user/lab_screen/view/labx_details.dart';
+import 'package:idaawee/features/user/record_screen/view/record_screen.dart';
+import 'package:idaawee/features/user/report/view/report_deails_screen.dart';
+import 'package:idaawee/features/user/record_screen/view/appointment_detail_screen.dart';
 import 'package:idaawee/features/user/user_main_menu/views/main_menu_screen.dart';
-import 'package:idaawee/features/user/pharmacy_screen/view/user_explore_product_screen.dart';
-import 'package:idaawee/features/user/pharmacy_screen/view/user_pharmacy_search_screen.dart';
-import 'package:idaawee/features/user/pharmacy_screen/view/user_upload_presentation_screen.dart';
-import 'package:idaawee/features/user/pharmacy_screen/view/user_pharmacy_screen.dart';
+import 'package:idaawee/features/user/report/view/user_report_screen.dart';
 import 'package:idaawee/features/user/user_profile/view/user_about_screen.dart';
 import 'package:idaawee/features/user/user_profile/view/user_contact_us_screen.dart';
 import 'package:idaawee/features/doctor/doctor_profile/view/doctor_edit_profile_screen.dart';
@@ -55,10 +53,7 @@ import 'package:idaawee/features/user/user_profile/view/user_privacy_policy_scre
 import 'package:idaawee/utils/error_screen.dart';
 import '../features/user/appointment/view/speciallized_doctors_screen.dart';
 import '../features/user/consulation/view/user_quick_consultation_screen.dart';
-import '../features/user/lab_screen/view/lab_payment_screen.dart';
-import '../features/user/lab_screen/view/lab_search_screen.dart';
-import '../features/user/lab_screen/view/user_lab_payment_mode_screen.dart';
-import '../features/user/pharmacy_screen/view/pharmacy_search_screen.dart';
+import '../features/user/record_screen/view/lab_payment_screen.dart';
 import '../features/user/user_profile/view/user_term_and_condition.dart';
 import 'navigation.dart';
 
@@ -90,13 +85,13 @@ class AppRoutes {
   static const String medicalRecordScreen = '/medicalRecordScreen';
   static const String addRecordScreen = '/addRecordScreen';
   static const String paymentScreen = '/paymentScreen';
-  static const String labScreen = '/labScreen';
+  static const String recordScreen = '/recordScreen';
   static const String pharmacyScreen = '/pharmacyScreen';
   static const String searchPharmacy = '/searchPharmacy';
   static const String explorePharmacyProduct = '/explorePharmacyProduct';
   static const String uploadPresentation = '/uploadPresentation';
-  static const String xlabDetail = '/xlabDetail';
-  static const String orderlabScreen = '/orderlabScreen';
+  static const String appointmentDetailsScreen = '/appointmentDetailsScreen';
+  static const String reportDetailScreen = '/reportDetailScreen';
   static const String userLabPaymentModeScreen = '/userLabPaymentModeScreen';
   static const String labPaymentScreen = '/labPaymentScreen';
   static const String userConfirmedAppointmentScreen =
@@ -120,6 +115,7 @@ class AppRoutes {
       '/userTermAndConditionScreen';
   static const String consulationPaymentScreen = 'consulationPaymentScreen';
   static const String offerSuccessfullScreen = '/offerSuccessfullScreen';
+  static const String addReportScreen = '/addReportScreen';
 
   // Doctor portion
 
@@ -188,29 +184,28 @@ class AppRoutes {
 
       case medicalRecordScreen:
         return _buildRoute(const AddMedicalRecordScreen());
+      case addReportScreen:
+        return _buildRoute(const AddReportScreen());
       case addRecordScreen:
         return _buildRoute(const AddRecordScreen());
 
-      case labScreen:
-        return _buildRoute(const UserLabScreen());
+      case recordScreen:
+        return _buildRoute(const RecordScreen());
       case pharmacyScreen:
-        return _buildRoute(const UserPharmacyScreen());
-      case searchPharmacy:
-        return _buildRoute(const UserPharmacySearchScreen());
-      case explorePharmacyProduct:
-        return _buildRoute(const UserExploreProductScreen());
-      case uploadPresentation:
-        return _buildRoute(const UserUploadPresentationScreen());
-      case xlabDetail:
-        return _buildRoute(const LabXDetails());
-      case orderlabScreen:
-        return _buildRoute(const OrderLabPage());
-      case userLabPaymentModeScreen:
-        return _buildRoute(const UserLabPaymentModeScreen());
+        return _buildRoute(const UserReportScreen());
+
+      case appointmentDetailsScreen:
+        return _buildRoute(const AppointmentDetailScreen());
+
+      case reportDetailScreen:
+        final arguments = settings.arguments as Map<String, dynamic>;
+
+        return _buildRoute(ReportDetailsScreen(
+          title: arguments["title"],
+        ));
+
       case labPaymentScreen:
         return _buildRoute(LabPaymentScreen());
-      case labSearchScreen:
-        return _buildRoute(const LabSearchScreen());
 
       case userEditProfileScreen:
         return _buildRoute(const UserEditProfileScreen());
@@ -239,8 +234,7 @@ class AppRoutes {
         return _buildRoute(const UserCheckOutPharmacy());
       case notificationScreen:
         return _buildRoute(const UserNotificationScreen());
-      case pharmacySearchScreen:
-        return _buildRoute(const PharmacySearchScreen());
+
       case offerSuccessfullScreen:
         final arguments = settings.arguments as Map<String, dynamic>;
         return _buildRoute(OfferSuccessfullScreen(
