@@ -1,22 +1,22 @@
 import 'package:idaawee/commons/common_functions/padding.dart';
 import 'package:idaawee/commons/common_imports/apis_commons.dart';
 import 'package:idaawee/commons/common_imports/common_libs.dart';
+import 'package:idaawee/commons/common_widgets/common_app_bar.dart';
 import 'package:idaawee/features/user/home/widget/u_book_clinic_appointment_section.dart';
 import 'package:idaawee/features/user/home/widget/u_consult_doctor_over_video_section.dart';
+import 'package:idaawee/features/user/home/widget/u_top_search_widget.dart';
 import 'package:idaawee/features/user/home/widget/u_view_all_clinic_section.dart';
-import 'package:idaawee/commons/common_widgets/u_custom_appbar.dart';
 import 'package:idaawee/features/user/home/widget/u_consultation_with_doctor_section.dart';
 import 'package:idaawee/features/user/home/widget/u_for_appointment_doctor_section.dart';
-import 'package:idaawee/features/user/home/widget/u_home_banner_section.dart';
-import 'package:idaawee/features/user/home/widget/u_home_offer_section.dart';
+import 'package:idaawee/features/user/home/widget/u_our_specialization_widget.dart';
 import 'package:idaawee/features/user/home/widget/u_premium_video_consultant_section.dart';
 import 'package:idaawee/features/user/home/widget/u_premium_clinic_consultant_section.dart';
 import 'package:idaawee/features/user/home/widget/u_see_all_block_section.dart';
 import 'package:idaawee/features/user/home/widget/u_specialist_section.dart';
 import 'package:idaawee/features/user/home/widget/u_specialized_doctor_section.dart';
 import 'package:idaawee/features/user/home/widget/u_surgery_section.dart';
-import 'package:idaawee/features/user/user_main_menu/controller/main_menu_controller.dart';
-import 'package:idaawee/utils/constants/assets_manager.dart';
+
+import '../../../../utils/constants/assets_manager.dart';
 
 // ignore: must_be_immutable
 class UserHomeScreen extends ConsumerWidget {
@@ -25,31 +25,31 @@ class UserHomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      body: SizedBox(
+      appBar: const CommonAppBar(
+        isBackButton: false,
+        appBarTitle: 'Handwerker',
+      ),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage(AppAssets.homeBg), fit: BoxFit.cover),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            UCustomAppBar(
-              isBackButton: false,
-              onSearchTap: () {
-                final mainMenuCtr = ref.watch(mainMenuProvider);
-                mainMenuCtr.setIndex(2);
-              },
-              profileImage: AppAssets.profile,
-              userName: 'Amelia Adam',
-            ),
             Expanded(
                 child: SingleChildScrollView(
+                    padding: EdgeInsets.zero,
                     physics: const BouncingScrollPhysics(),
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           padding16,
-                          const UHomeBannerSection(),
+                          const UTopSearchWidget(),
                           padding16,
-                          UHomeOfferSection(),
+                          UOurSpecializationWidget(),
                           padding16,
                           const UConsultationWithDoctorSection(),
                           padding16,

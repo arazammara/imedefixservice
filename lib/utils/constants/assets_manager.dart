@@ -4,6 +4,10 @@ const String imagesPath = 'assets/images';
 class AppAssets {
   // Icons Path
   static const String logo = '$iconPath/splash_logo.png';
+  static const String profile = '$iconPath/profile.png';
+  static const String report = '$iconPath/report.png';
+  static const String hand = '$iconPath/hand.png';
+
   static const String patient = '$iconPath/patient.png';
   static const String doctor = '$iconPath/doctor.png';
   static const String google = '$iconPath/google.png';
@@ -117,7 +121,6 @@ class AppAssets {
   static const String pharmacy = '$imagesPath/pharmacy.png';
   static const String physiotherapist = '$imagesPath/Physiotherapist.png';
   static const String psychiatrist = '$imagesPath/Psychiatrist.png';
-  static const String profile = '$imagesPath/profile.png';
   static const String banner = '$imagesPath/banner.png';
   static const String expert = '$imagesPath/expert.png';
   static const String body = '$imagesPath/body.png';

@@ -54,7 +54,7 @@ class _MyAppState extends ConsumerState<MyApp> {
           theme: lightThemeData(context),
           themeMode: ThemeMode.light,
           onGenerateRoute: AppRoutes.onGenerateRoute,
-          initialRoute: AppRoutes.splashScreen,
+          initialRoute: AppRoutes.userMainMenuScreen,
         );
       },
     );

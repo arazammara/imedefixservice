@@ -1,4 +1,3 @@
-
 import 'package:idaawee/features/user/user_main_menu/controller/main_menu_controller.dart';
 import '../../../../commons/common_imports/common_libs.dart';
 
@@ -9,29 +8,38 @@ class BottomBarItem extends StatelessWidget {
     required this.onTap,
     required this.icon,
     required this.index,
+    required this.title,
   });
 
   final MainMenuController mainMenuCtr;
   final Function() onTap;
   final String icon;
   final int index;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      child: Container(
+      child: SizedBox(
         width: 70.w,
-        height: 40.h,
-        color:MyColors.bottomBarColor ,
+        height: 47.h,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(icon,
-                width: 25.w,
-                height: 25.h,
+                width: 20.w,
+                height: 20.h,
                 color: mainMenuCtr.index == index
-                    ? MyColors.themebBluishGreyColor: MyColors.grey),
+                    ? MyColors.appColor
+                    : MyColors.grey),
+            Text(
+              title,
+              style: getSemiBoldStyle(
+                  color: mainMenuCtr.index == index
+                      ? MyColors.appColor
+                      : MyColors.grey),
+            )
           ],
         ),
       ),

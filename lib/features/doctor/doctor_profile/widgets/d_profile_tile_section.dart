@@ -39,7 +39,7 @@ class DProfileTileSection extends StatelessWidget {
                         Text(
                           editProfile,
                           style: getRegularStyle(
-                              color: MyColors.black, fontSize: MyFonts.size12),
+                              color: MyColors.black, fontSize: MyFonts.size14),
                         ),
                       ],
                     ),
