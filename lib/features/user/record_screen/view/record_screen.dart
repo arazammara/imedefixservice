@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:idaawee/commons/common_imports/common_libs.dart';
 import 'package:idaawee/commons/common_widgets/common_app_bar.dart';
-import 'package:idaawee/features/user/record_screen/widget/record_card_widget.dart';
+import 'package:idaawee/commons/common_widgets/u_common_record_card.dart';
 import 'package:idaawee/features/user/user_main_menu/controller/main_menu_controller.dart';
 import 'package:idaawee/routes/route_manager.dart';
 import 'package:idaawee/utils/constants/assets_manager.dart';
@@ -38,7 +38,7 @@ class RecordScreen extends ConsumerWidget {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 8),
-                    child: RecordCardWidget(
+                    child: UCommonRecordCard(
                       image: 'assets/images/img.png',
                       name: 'Dr. Maria Elena',
                       speciality: 'Psychologist',

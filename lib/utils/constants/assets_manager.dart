@@ -11,6 +11,8 @@ class AppAssets {
   static const String update = '$iconPath/update.png';
   static const String download = '$iconPath/download.png';
   static const String pdf = '$iconPath/pdf.png';
+  static const String star = '$iconPath/star.png';
+  static const String thumb = '$iconPath/thumb.png';
 
   static const String patient = '$iconPath/patient.png';
   static const String doctor = '$iconPath/doctor.png';

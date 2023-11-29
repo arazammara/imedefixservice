@@ -25,7 +25,9 @@ import 'package:idaawee/features/user/appointment/view/user_confirm_appointment_
 import 'package:idaawee/features/user/consulation/view/consulation_payment_screen.dart';
 import 'package:idaawee/features/user/consulation/view/speciallized_quick_video_consultation_screen.dart';
 import 'package:idaawee/features/user/consulation/view/user_consulation_screen.dart';
+import 'package:idaawee/features/user/our_speciallist/view/user_our_specialist_detail_screen.dart';
 import 'package:idaawee/features/user/our_speciallist/view/user_our_speciallist_screen.dart';
+import 'package:idaawee/features/user/our_speciallist/view/user_platinum_provider_screen.dart';
 import 'package:idaawee/features/user/report/view/add_report_screen.dart';
 import 'package:idaawee/features/user/user_check_out_order_history/view/user_check_out_appointment_screen.dart';
 import 'package:idaawee/features/user/user_check_out_order_history/view/user_check_out_consulation_screen.dart';
@@ -68,6 +70,9 @@ class AppRoutes {
 
   // User Portion
   static const String userSpecialListScreen = '/userSpecialListScreen';
+  static const String userSpecialListDetailScreen =
+      '/userSpecialListScreenDetail';
+  static const String userPlatinumProviderScreen = '/userPlatinumProviderScreen';
 
   static const String userHomeScreen = '/userHomeScreen';
   static const String userMainMenuScreen = '/userMainMenuScreen';
@@ -163,6 +168,8 @@ class AppRoutes {
         return _buildRoute(const UserDoctorList());
       case userAppointment:
         return _buildRoute(const UserAppointmentScreen());
+      case userSpecialListDetailScreen:
+        return _buildRoute(const UserOurSpecialistDetailScreen());
       case userSpeciallizedQuickAppointment:
         return _buildRoute(const SpeciallizedQuickAppointmentScreen());
       case userSpeciallizedDoctorsScreen:
@@ -173,6 +180,8 @@ class AppRoutes {
         ));
       case userConfirmedAppointmentScreen:
         return _buildRoute(UserConfirmedAppointmentScreen());
+      case userPlatinumProviderScreen:
+        return _buildRoute(const UserPlatinumProviderScreen());
       case userQuickConsultationScreen:
         return _buildRoute(const UserQuickConsulationScreen());
       case userSpeciallizedConsultationScreen:

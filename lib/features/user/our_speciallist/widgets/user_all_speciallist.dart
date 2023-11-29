@@ -1,5 +1,6 @@
 import 'package:idaawee/commons/common_functions/padding.dart';
 import 'package:idaawee/commons/common_imports/common_libs.dart';
+import 'package:idaawee/routes/route_manager.dart';
 import 'package:idaawee/utils/constants/font_manager.dart';
 
 class UAllSpecialList extends StatefulWidget {
@@ -38,7 +39,10 @@ class _UAllSpecialListState extends State<UAllSpecialList> {
             mainAxisExtent: 113.h),
         itemBuilder: (context, index) {
           return InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(
+                  context, AppRoutes.userSpecialListDetailScreen);
+            },
             child: Column(
               children: [
                 Container(

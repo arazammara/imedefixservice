@@ -2,21 +2,23 @@ import 'package:idaawee/commons/common_functions/padding.dart';
 import 'package:idaawee/commons/common_imports/common_libs.dart';
 import 'package:idaawee/utils/constants/font_manager.dart';
 
-class RecordCardWidget extends StatelessWidget {
+class UCommonRecordCard extends StatelessWidget {
   final String image;
   final String name;
   final String speciality;
   final String qualification;
   final String status;
   final VoidCallback? onTap;
-  const RecordCardWidget(
+  final VoidCallback? patinumOnTap;
+  const UCommonRecordCard(
       {super.key,
       required this.image,
       required this.name,
       required this.speciality,
       required this.qualification,
       required this.status,
-      this.onTap});
+      this.onTap,
+      this.patinumOnTap});
 
   @override
   Widget build(BuildContext context) {
@@ -40,10 +42,13 @@ class RecordCardWidget extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset(
-                    status,
-                    height: 17.h,
-                    width: 137.w,
+                  InkWell(
+                    onTap: patinumOnTap,
+                    child: Image.asset(
+                      status,
+                      height: 17.h,
+                      width: 137.w,
+                    ),
                   ),
                   padding4,
                   Text(

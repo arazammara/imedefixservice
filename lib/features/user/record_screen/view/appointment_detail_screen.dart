@@ -3,7 +3,7 @@ import 'package:idaawee/commons/common_imports/common_libs.dart';
 import 'package:idaawee/features/user/record_screen/widget/appointment_date_time.dart';
 import 'package:idaawee/features/user/record_screen/widget/chat_history_widget.dart';
 import 'package:idaawee/features/user/record_screen/widget/feedback_widget.dart';
-import 'package:idaawee/features/user/record_screen/widget/record_card_widget.dart';
+import 'package:idaawee/commons/common_widgets/u_common_record_card.dart';
 import 'package:idaawee/features/user/record_screen/widget/share_document_widget.dart';
 import '../../../../commons/common_widgets/common_app_bar.dart';
 import '../../../../utils/constants/assets_manager.dart';
@@ -35,7 +35,8 @@ class _AppointmentDetailScreenState extends State<AppointmentDetailScreen> {
               padding: EdgeInsets.all(18.h),
               child: Column(
                 children: [
-                  RecordCardWidget(
+                  UCommonRecordCard(
+                    patinumOnTap: () {},
                     image: 'assets/images/img.png',
                     name: 'Dr. Maria Elena',
                     speciality: 'Psychologist',
