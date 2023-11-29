@@ -22,9 +22,6 @@ import 'package:idaawee/features/splash_and_onboarding/views/on_boarding_screen.
 import 'package:idaawee/features/splash_and_onboarding/views/splash_screen.dart';
 import 'package:idaawee/features/user/appointment/view/speciallized_quick_appointment_screen.dart';
 import 'package:idaawee/features/user/appointment/view/user_confirm_appointment_screen.dart';
-import 'package:idaawee/features/user/consulation/view/consulation_payment_screen.dart';
-import 'package:idaawee/features/user/consulation/view/speciallized_quick_video_consultation_screen.dart';
-import 'package:idaawee/features/user/consulation/view/user_consulation_screen.dart';
 import 'package:idaawee/features/user/our_speciallist/view/user_our_specialist_detail_screen.dart';
 import 'package:idaawee/features/user/our_speciallist/view/user_our_speciallist_screen.dart';
 import 'package:idaawee/features/user/our_speciallist/view/user_platinum_provider_screen.dart';
@@ -36,8 +33,6 @@ import 'package:idaawee/features/user/user_check_out_order_history/view/user_che
 import 'package:idaawee/features/user/user_check_out_order_history/view/user_check_out_pharmacy_screen.dart';
 import 'package:idaawee/features/user/user_notification/view/user_notification_screen.dart';
 import 'package:idaawee/features/user/appointment/view/user_appointment_screen.dart';
-import 'package:idaawee/features/user/consulation/view/add_medical_record_screen.dart';
-import 'package:idaawee/features/user/consulation/view/add_record_screen.dart';
 import 'package:idaawee/features/user/doctor_list/view/user_doctor_list.dart';
 import 'package:idaawee/features/user/home/view/user_home_screen.dart';
 import 'package:idaawee/features/user/record_screen/view/record_screen.dart';
@@ -54,7 +49,6 @@ import 'package:idaawee/features/user/user_profile/view/user_help_and_support_sc
 import 'package:idaawee/features/user/user_profile/view/user_privacy_policy_screen.dart';
 import 'package:idaawee/utils/error_screen.dart';
 import '../features/user/appointment/view/speciallized_doctors_screen.dart';
-import '../features/user/consulation/view/user_quick_consultation_screen.dart';
 import '../features/user/record_screen/view/lab_payment_screen.dart';
 import '../features/user/user_profile/view/user_term_and_condition.dart';
 import 'navigation.dart';
@@ -182,21 +176,13 @@ class AppRoutes {
         return _buildRoute(UserConfirmedAppointmentScreen());
       case userPlatinumProviderScreen:
         return _buildRoute(const UserPlatinumProviderScreen());
-      case userQuickConsultationScreen:
-        return _buildRoute(const UserQuickConsulationScreen());
-      case userSpeciallizedConsultationScreen:
-        return _buildRoute(const SpecializedQuickVideoConsultationScreen());
-      case userConsultationScreem:
-        final arguments = settings.arguments as Map<String, dynamic>;
-        return _buildRoute(
-            UserConsulationScreen(isPayments: arguments["isPayments"]));
+      
+      
 
-      case medicalRecordScreen:
-        return _buildRoute(const AddMedicalRecordScreen());
+
       case addReportScreen:
         return _buildRoute(const AddReportScreen());
-      case addRecordScreen:
-        return _buildRoute(const AddRecordScreen());
+    
 
       case recordScreen:
         return _buildRoute(const RecordScreen());
@@ -267,8 +253,7 @@ class AppRoutes {
         return _buildRoute(const DoctorCheckOutOrderHistory());
       case doctorEditProfileScreen:
         return _buildRoute(const DoctorEditProfileScreen());
-      case consulationPaymentScreen:
-        return _buildRoute(ConsulationPaymentScreen());
+  
       case doctorCheckOutConsulation:
         return _buildRoute(const DoctorCheckOutConsulation());
       case doctorCheckOutAppointment:

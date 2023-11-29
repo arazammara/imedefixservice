@@ -1,8 +1,8 @@
 import 'package:idaawee/commons/common_functions/padding.dart';
 import 'package:idaawee/commons/common_imports/common_libs.dart';
 import 'package:idaawee/features/user/home/widget/u_popular_doctor_card.dart';
-import 'package:idaawee/utils/constants/assets_manager.dart';
 import 'package:idaawee/utils/constants/font_manager.dart';
+
 class UpopularDoctor extends StatefulWidget {
   const UpopularDoctor({
     super.key,
@@ -41,7 +41,7 @@ class _UpopularDoctorState extends State<UpopularDoctor> {
                     padding: const EdgeInsets.only(bottom: 10.0),
                     child: UPopularDoctorCard(
                       onTap: () {},
-                      image: AppAssets.gynecologist,
+                      image: 'assets/images/img.png',
                       name: 'Dr. Berlin Elizerd',
                       speciality: 'Medicine Specialist',
                       rating: 4.7,
