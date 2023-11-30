@@ -2,15 +2,9 @@ import 'package:idaawee/commons/common_functions/padding.dart';
 import 'package:idaawee/commons/common_imports/common_libs.dart';
 import 'package:idaawee/utils/constants/font_manager.dart';
 
-class UNotificationAppointmentCard extends StatelessWidget {
-  final String date;
-  final String timeago;
-  final String title;
-  const UNotificationAppointmentCard(
-      {super.key,
-      required this.date,
-      required this.timeago,
-      required this.title});
+class USystemCard extends StatelessWidget {
+  final String image;
+  const USystemCard({super.key, required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +26,23 @@ class UNotificationAppointmentCard extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 13),
         child: Row(
           children: [
-            Image.asset(
-              'assets/images/img.png',
+            Container(
               height: 64.h,
               width: 64.w,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5.r),
+                color: MyColors.lightgrey,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    image,
+                    height: 42.h,
+                    width: 42.w,
+                  ),
+                ],
+              ),
             ),
             const SizedBox(
               width: 10,
@@ -49,26 +56,11 @@ class UNotificationAppointmentCard extends StatelessWidget {
                   children: [
                     SizedBox(
                       width: 233.w,
-                      child: RichText(
-                          text: TextSpan(
-                        text: 'Your appointment with ',
+                      child: Text(
+                        '\$200 consultation charges are detected from your balance',
                         style: getMediumStyle(
                             color: MyColors.black, fontSize: MyFonts.size14),
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Dr. Maria Elena',
-                            style: getSemiBoldStyle(
-                                color: MyColors.appColor,
-                                fontSize: MyFonts.size14),
-                          ),
-                          TextSpan(
-                            text: ' is confirm on 1st July, 2023 at 10:00 AM',
-                            style: getMediumStyle(
-                                color: MyColors.black,
-                                fontSize: MyFonts.size12),
-                          ),
-                        ],
-                      )),
+                      ),
                     ),
                   ],
                 ),

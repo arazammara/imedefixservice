@@ -16,12 +16,14 @@ class CustomButton extends StatelessWidget {
     this.padding,
     this.borderRadius,
     this.textStyle,
+    this.borderColor,
   });
   final Function()? onPressed;
   final String buttonText;
   final bool isLoading;
   final Color? backColor;
   final Color? textColor;
+  final Color? borderColor;
   final double? buttonWidth;
   final double? buttonHeight;
   final double? fontSize;
@@ -43,11 +45,16 @@ class CustomButton extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
+              border: borderColor != null
+                  ? Border.all(color: borderColor ?? backColor!)
+                  : null,
               borderRadius: BorderRadius.circular(borderRadius ?? 190.r),
-              gradient: const LinearGradient(colors: [
-                MyColors.appColor1,
-                MyColors.appColor,
-              ])),
+              gradient: backColor == null
+                  ? const LinearGradient(colors: [
+                      MyColors.appColor1,
+                      MyColors.appColor,
+                    ])
+                  : null),
           // padding: EdgeInsets.symmetric(vertical: 10.h),
           width: buttonWidth ?? double.infinity,
           height: buttonHeight ?? 56.h,

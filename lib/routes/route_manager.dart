@@ -15,42 +15,23 @@ import 'package:idaawee/features/doctor/doctor_check_out_order_history/view/doct
 import 'package:idaawee/features/doctor/labtest_offer/view/doctor_labtest_offer_screen.dart';
 import 'package:idaawee/features/doctor/main_menu/views/doctor_main_menu_screen.dart';
 import 'package:idaawee/features/doctor/notification/view/doctor_notification_screen.dart';
-import 'package:idaawee/features/doctor/offer_successfull.dart/view/offer_successfull_screen.dart';
 import 'package:idaawee/features/doctor/pharmacy_offer/view/doctor_pharmacy_offer_screen.dart';
-
 import 'package:idaawee/features/splash_and_onboarding/views/on_boarding_screen.dart';
 import 'package:idaawee/features/splash_and_onboarding/views/splash_screen.dart';
-import 'package:idaawee/features/user/appointment/view/speciallized_quick_appointment_screen.dart';
-import 'package:idaawee/features/user/appointment/view/user_confirm_appointment_screen.dart';
+import 'package:idaawee/features/user/home/view/user_next_appointment_screen.dart';
 import 'package:idaawee/features/user/our_speciallist/view/user_our_specialist_detail_screen.dart';
 import 'package:idaawee/features/user/our_speciallist/view/user_our_speciallist_screen.dart';
 import 'package:idaawee/features/user/our_speciallist/view/user_platinum_provider_screen.dart';
 import 'package:idaawee/features/user/report/view/add_report_screen.dart';
-import 'package:idaawee/features/user/user_check_out_order_history/view/user_check_out_appointment_screen.dart';
-import 'package:idaawee/features/user/user_check_out_order_history/view/user_check_out_consulation_screen.dart';
-import 'package:idaawee/features/user/user_check_out_order_history/view/user_check_out_labtest_screen.dart';
-import 'package:idaawee/features/user/user_check_out_order_history/view/user_check_out_order_history_screen.dart';
-import 'package:idaawee/features/user/user_check_out_order_history/view/user_check_out_pharmacy_screen.dart';
 import 'package:idaawee/features/user/user_notification/view/user_notification_screen.dart';
-import 'package:idaawee/features/user/appointment/view/user_appointment_screen.dart';
-import 'package:idaawee/features/user/doctor_list/view/user_doctor_list.dart';
 import 'package:idaawee/features/user/home/view/user_home_screen.dart';
 import 'package:idaawee/features/user/record_screen/view/record_screen.dart';
 import 'package:idaawee/features/user/report/view/report_deails_screen.dart';
 import 'package:idaawee/features/user/record_screen/view/appointment_detail_screen.dart';
 import 'package:idaawee/features/user/user_main_menu/views/main_menu_screen.dart';
 import 'package:idaawee/features/user/report/view/user_report_screen.dart';
-import 'package:idaawee/features/user/user_profile/view/user_about_screen.dart';
-import 'package:idaawee/features/user/user_profile/view/user_contact_us_screen.dart';
 import 'package:idaawee/features/doctor/doctor_profile/view/doctor_edit_profile_screen.dart';
-import 'package:idaawee/features/user/user_profile/view/user_edit_profile_screen.dart';
-import 'package:idaawee/features/user/user_profile/view/user_faq_screen.dart';
-import 'package:idaawee/features/user/user_profile/view/user_help_and_support_screen.dart';
-import 'package:idaawee/features/user/user_profile/view/user_privacy_policy_screen.dart';
 import 'package:idaawee/utils/error_screen.dart';
-import '../features/user/appointment/view/speciallized_doctors_screen.dart';
-import '../features/user/record_screen/view/lab_payment_screen.dart';
-import '../features/user/user_profile/view/user_term_and_condition.dart';
 import 'navigation.dart';
 
 class AppRoutes {
@@ -61,60 +42,24 @@ class AppRoutes {
   static const String staffPortalSignInScreen = '/staffPortalSignInScreen';
   static const String accountType = '/accountType';
   static const String loginScreen = '/loginScreen';
-
   // User Portion
   static const String userSpecialListScreen = '/userSpecialListScreen';
   static const String userSpecialListDetailScreen =
       '/userSpecialListScreenDetail';
-  static const String userPlatinumProviderScreen = '/userPlatinumProviderScreen';
-
+  static const String userPlatinumProviderScreen =
+      '/userPlatinumProviderScreen';
   static const String userHomeScreen = '/userHomeScreen';
   static const String userMainMenuScreen = '/userMainMenuScreen';
-  static const String doctorListScreen = '/doctorListScreen';
-  static const String userAppointment = '/userAppointment';
-  static const String userSpeciallizedQuickAppointment =
-      '/userSpeciallizedQuickAppointment';
-  static const String userSpeciallizedDoctorsScreen =
-      '/userSpeciallizedDoctorsScreen';
-  static const String userConsultationScreem = '/userConsultationScreem';
-  static const String userSpeciallizedConsultationScreen =
-      '/userSpeciallizedConsultationScreen';
-  static const String userQuickConsultationScreen =
-      '/userQuickConsultationScreem';
-  static const String medicalRecordScreen = '/medicalRecordScreen';
   static const String addRecordScreen = '/addRecordScreen';
-  static const String paymentScreen = '/paymentScreen';
   static const String recordScreen = '/recordScreen';
-  static const String pharmacyScreen = '/pharmacyScreen';
-  static const String searchPharmacy = '/searchPharmacy';
-  static const String explorePharmacyProduct = '/explorePharmacyProduct';
-  static const String uploadPresentation = '/uploadPresentation';
+  static const String userReportScreen = '/userReportScreen';
   static const String appointmentDetailsScreen = '/appointmentDetailsScreen';
   static const String reportDetailScreen = '/reportDetailScreen';
-  static const String userLabPaymentModeScreen = '/userLabPaymentModeScreen';
-  static const String labPaymentScreen = '/labPaymentScreen';
-  static const String userConfirmedAppointmentScreen =
-      '/userConfirmedPointmentScreen';
-
-  static const String userEditProfileScreen = '/userEditProfileScreen';
-  static const String helpsupportScreen = '/helpsupportScreen';
-  static const String about = '/about';
-  static const String contactUs = '/contactUs';
-  static const String privactPolicy = '/privactPolicy';
-  static const String faq = '/faq';
-  static const String checkOutOrderHistory = '/checkOutOrderHistory';
-  static const String checkOutConsulation = '/checkOutConsulation';
-  static const String checkOutAppointment = '/checkOutAppointment';
-  static const String checkOutLabTest = '/checkOutLabTest';
-  static const String checkOutPharmacy = '/checkOutPharmacy';
-  static const String notificationScreen = '/notificationScreen';
-  static const String labSearchScreen = '/labSearchScreen';
-  static const String pharmacySearchScreen = '/pharmacySearchScreen';
-  static const String userTermAndConditionScreen =
-      '/userTermAndConditionScreen';
+  static const String userNextAppintmentScreen = '/userNextAppintmentScreen';
   static const String consulationPaymentScreen = 'consulationPaymentScreen';
   static const String offerSuccessfullScreen = '/offerSuccessfullScreen';
   static const String addReportScreen = '/addReportScreen';
+  static const String notificationScreen = '/notificationScreen';
 
   // Doctor portion
 
@@ -158,35 +103,22 @@ class AppRoutes {
         return _buildRoute(const UserHomeScreen());
       case userMainMenuScreen:
         return _buildRoute(const UserMainMenuScreen());
-      case doctorListScreen:
-        return _buildRoute(const UserDoctorList());
-      case userAppointment:
-        return _buildRoute(const UserAppointmentScreen());
+
       case userSpecialListDetailScreen:
         return _buildRoute(const UserOurSpecialistDetailScreen());
-      case userSpeciallizedQuickAppointment:
-        return _buildRoute(const SpeciallizedQuickAppointmentScreen());
-      case userSpeciallizedDoctorsScreen:
-        final arguments = settings.arguments as Map<String, dynamic>;
-        return _buildRoute(SpecializedDoctorsScreen(
-          categoryImage: arguments["categoryImage"],
-          categoryName: arguments["categoryName"],
-        ));
-      case userConfirmedAppointmentScreen:
-        return _buildRoute(UserConfirmedAppointmentScreen());
+
+      case userNextAppintmentScreen:
+        return _buildRoute(const UserNextAppointmenyScreen());
+
       case userPlatinumProviderScreen:
         return _buildRoute(const UserPlatinumProviderScreen());
-      
-      
-
 
       case addReportScreen:
         return _buildRoute(const AddReportScreen());
-    
 
       case recordScreen:
         return _buildRoute(const RecordScreen());
-      case pharmacyScreen:
+      case userReportScreen:
         return _buildRoute(const UserReportScreen());
 
       case appointmentDetailsScreen:
@@ -198,43 +130,8 @@ class AppRoutes {
         return _buildRoute(ReportDetailsScreen(
           title: arguments["title"],
         ));
-
-      case labPaymentScreen:
-        return _buildRoute(LabPaymentScreen());
-
-      case userEditProfileScreen:
-        return _buildRoute(const UserEditProfileScreen());
-      case helpsupportScreen:
-        return _buildRoute(const UserHelpAndSupportScreen());
-      case about:
-        return _buildRoute(const UserAboutScreen());
-      case contactUs:
-        return _buildRoute(UserContactUsScreen());
-      case privactPolicy:
-        return _buildRoute(const UserPrivacyPolicyScreen());
-      case faq:
-        return _buildRoute(const UserFAQScreen());
-      case userTermAndConditionScreen:
-        return _buildRoute(const UserTermAndConditionScreen());
-
-      case checkOutOrderHistory:
-        return _buildRoute(const UserCheckOutOrderHistory());
-      case checkOutConsulation:
-        return _buildRoute(const CheckOutConsulation());
-      case checkOutAppointment:
-        return _buildRoute(const UserCheckOutAppointmentScreen());
-      case checkOutLabTest:
-        return _buildRoute(const UserCheckOutLabTest());
-      case checkOutPharmacy:
-        return _buildRoute(const UserCheckOutPharmacy());
       case notificationScreen:
         return _buildRoute(const UserNotificationScreen());
-
-      case offerSuccessfullScreen:
-        final arguments = settings.arguments as Map<String, dynamic>;
-        return _buildRoute(OfferSuccessfullScreen(
-          successMsg: arguments['msg'],
-        ));
 
       /// DOCTOR SECTION ///
       case doctorMainMenu:
@@ -253,7 +150,7 @@ class AppRoutes {
         return _buildRoute(const DoctorCheckOutOrderHistory());
       case doctorEditProfileScreen:
         return _buildRoute(const DoctorEditProfileScreen());
-  
+
       case doctorCheckOutConsulation:
         return _buildRoute(const DoctorCheckOutConsulation());
       case doctorCheckOutAppointment:

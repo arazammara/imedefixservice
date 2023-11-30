@@ -26,10 +26,9 @@ class _UNextAppointmentWidgetState extends State<UNextAppointmentWidget> {
           const SizedBox(
             height: 10,
           ),
-          UDoctorConsultationCard(
+          UDoctorNextAppointmentCard(
             onTap: () {
-              Navigator.pushNamed(
-                  context, AppRoutes.userQuickConsultationScreen);
+              Navigator.pushNamed(context, AppRoutes.userNextAppintmentScreen);
             },
             name: "Dr. Darlene Robertson",
             specialist: "Dentist Specialist",

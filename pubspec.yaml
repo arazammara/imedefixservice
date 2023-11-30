@@ -65,6 +65,7 @@ dependencies:
   expansion_tile_card: ^3.0.0
   bottom_sheet: ^4.0.0
   country_code_picker: ^3.0.0
+  animated_segmented_tab_control: ^1.2.0
   
  
 

@@ -1,4 +1,3 @@
-import 'package:idaawee/features/user/doctor_list/view/user_doctor_list.dart';
 import 'package:idaawee/features/user/home/view/user_home_screen.dart';
 import 'package:idaawee/features/user/record_screen/view/record_screen.dart';
 import 'package:idaawee/features/user/report/view/user_report_screen.dart';
@@ -13,7 +12,7 @@ class MainMenuController extends ChangeNotifier {
   List<Widget> screens = [
     const UserHomeScreen(),
     const UserReportScreen(),
-    const UserDoctorList(),
+     Container(),
     const RecordScreen(),
     const UserProfileScreen(),
   ];
