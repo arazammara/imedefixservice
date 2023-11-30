@@ -156,6 +156,4 @@ class AppAssets {
   static const String pbanner = '$imagesPath/pbanner.png';
   static const String prescription = '$imagesPath/prescription.png';
   static const String fram = '$imagesPath/Frame.png';
-  static const String item = '$imagesPath/item.png';
-  static const String bro = '$imagesPath/bro.png';
 }
