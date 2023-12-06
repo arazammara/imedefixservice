@@ -25,7 +25,7 @@ class UCommonRecordCard extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        height: 117.h,
+        height: 130.h,
         decoration: BoxDecoration(
           color: MyColors.white,
           borderRadius: BorderRadius.circular(5.r),

@@ -1,17 +1,20 @@
 import 'package:idaawee/commons/common_functions/padding.dart';
 import 'package:idaawee/commons/common_imports/common_libs.dart';
+import 'package:idaawee/features/auth/view/doctorregistration/widgets/nextbutton.dart';
 import 'package:idaawee/features/user/our_speciallist/widgets/u_similar_doctor.dart';
+import 'package:idaawee/routes/route_manager.dart';
 import 'package:idaawee/utils/constants/font_manager.dart';
 
 class UAboutDoctorTabview extends StatelessWidget {
-  const UAboutDoctorTabview({super.key});
+  const UAboutDoctorTabview({super.key, this.isdoctor = false});
+  final bool isdoctor;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 18.w),
       child: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
+        // physics: const NeverScrollableScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -199,15 +202,24 @@ class UAboutDoctorTabview extends StatelessWidget {
                 ),
               ),
             ),
-            padding10,
-            USimilarDoctor(
-              name: 'Dr. Berlin Elizerd',
-              speciality: 'Medicine Specialist',
-              image: 'assets/images/img.png',
-              rating: 4.5,
-              review: '452',
-              onPress: () {},
-            ),
+            isdoctor == true
+                ? Container()
+                : NextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, AppRoutes.bookDoctorPage);
+                    },
+                    isbackbuton: false,
+                    text: 'Book Now'),
+            isdoctor == true
+                ? Container()
+                : USimilarDoctor(
+                    name: 'Dr. Berlin Elizerd',
+                    speciality: 'Medicine Specialist',
+                    image: 'assets/images/img.png',
+                    rating: 4.5,
+                    review: '452',
+                    onPress: () {},
+                  ),
           ],
         ),
       ),

@@ -128,7 +128,13 @@ class _AccountTypeScreenState extends State<AccountTypeScreen> {
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: CustomButton(
                           onPressed: () {
-                            Navigator.pushNamed(context, AppRoutes.loginScreen);
+                            if (index == 1) {
+                              Navigator.pushNamed(
+                                  context, AppRoutes.doctoraccountType);
+                            } else {
+                              Navigator.pushNamed(
+                                  context, AppRoutes.loginScreen);
+                            }
                           },
                           buttonText: 'Continue',
                           textStyle: getBoldStyle(
@@ -139,7 +145,6 @@ class _AccountTypeScreenState extends State<AccountTypeScreen> {
                   ),
                 ),
               ),
-
             ],
           ),
         ),

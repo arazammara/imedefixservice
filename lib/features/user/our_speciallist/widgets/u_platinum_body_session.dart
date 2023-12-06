@@ -25,7 +25,7 @@ class UPlatinumProviderBodySession extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  padding85,
+                  padding80,
                   Text(
                     'Dr. Maria Elena',
                     style: getBoldStyle(
@@ -133,7 +133,9 @@ class UPlatinumProviderBodySession extends StatelessWidget {
                   const Expanded(
                     child: TabBarView(
                       children: [
-                        UAboutDoctorTabview(),
+                        UAboutDoctorTabview(
+                          isdoctor: false,
+                        ),
                         UReviewTabview(),
                       ],
                     ),

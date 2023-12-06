@@ -4,7 +4,7 @@ const String imagesPath = 'assets/images';
 class AppAssets {
   // Icons Path
   static const String logo = '$iconPath/splash_logo.png';
-  static const String profile = '$iconPath/profile.png';
+  static const String profile = '$iconPath/Profile.png';
   static const String report = '$iconPath/report.png';
   static const String hand = '$iconPath/hand.png';
   static const String delete = '$iconPath/delete.png';
@@ -156,4 +156,16 @@ class AppAssets {
   static const String pbanner = '$imagesPath/pbanner.png';
   static const String prescription = '$imagesPath/prescription.png';
   static const String fram = '$imagesPath/Frame.png';
+
+  // Icons Path
+
+  static const String doctortitle = '$iconPath/doctortitle.png';
+
+  static const String arrowsent = '$imagesPath/arrowsent.png';
+
+  static const String individualdoctor = '$imagesPath/individualDoctor.png';
+  static const String officedoctor = '$imagesPath/officedoctor.png';
+
+  static const String item = '$imagesPath/item.png';
+  static const String bro = '$imagesPath/bro.png';
 }

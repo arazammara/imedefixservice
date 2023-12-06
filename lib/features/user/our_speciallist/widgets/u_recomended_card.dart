@@ -40,7 +40,7 @@ class RecomondedCard extends StatelessWidget {
               style: getMediumStyle(
                   color: MyColors.grey, fontSize: MyFonts.size14),
             ),
-            padding16,
+            padding12,
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

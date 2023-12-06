@@ -3,6 +3,7 @@ import 'package:idaawee/utils/constants/font_manager.dart';
 
 class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
+  final double borderRadius;
   final String hintText;
   final Color? hintColor;
   final Function(String) onChanged;
@@ -39,6 +40,7 @@ class CustomTextField extends StatelessWidget {
       this.tailingIcon,
       this.leadingIconPath,
       this.texfieldHeight,
+      this.borderRadius = 100,
       required this.label,
       this.showLabel = true,
       this.trailingIconPath,
@@ -90,7 +92,7 @@ class CustomTextField extends StatelessWidget {
             border: Border.all(
                 color: MyColors.loginScreenTextColor.withOpacity(0.16),
                 width: 1.w),
-            borderRadius: BorderRadius.circular(radius ?? 100.r),
+            borderRadius: BorderRadius.circular(radius ?? borderRadius.r),
           ),
           child: TextFormField(
             onTap: onTap,

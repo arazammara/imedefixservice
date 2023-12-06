@@ -473,3 +473,9 @@ const String pendingApproval = 'Pending Approval';
 const String approved =
     'Your request has been sent to the admin, once it will approve, you will be able to create services and offers';
 const String submiforreview = 'Submit for Review';
+
+const String individual = 'Individual';
+const String officetext = 'Office';
+
+const String individualDec = 'Registration as a individuals doctor on IMEDIFIX';
+const String officeDec = 'Registration as a office on IMEDIFIX';

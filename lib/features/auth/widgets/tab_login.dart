@@ -107,7 +107,7 @@ class _TabLoginState extends State<TabLogin> {
             CustomButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
-                  Navigator.pushNamed(context, AppRoutes.userSpecialListScreen);
+                  Navigator.pushNamed(context, AppRoutes.userMainMenuScreen);
                 }
               },
               buttonText: login,

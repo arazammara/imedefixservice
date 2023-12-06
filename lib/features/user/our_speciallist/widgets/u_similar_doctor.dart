@@ -3,6 +3,7 @@ import 'package:idaawee/commons/common_imports/common_libs.dart';
 import 'package:idaawee/utils/constants/font_manager.dart';
 
 class USimilarDoctor extends StatelessWidget {
+  final bool isaddingdoctor;
   final String name;
   final String speciality;
   final double rating;
@@ -12,6 +13,7 @@ class USimilarDoctor extends StatelessWidget {
   const USimilarDoctor(
       {super.key,
       required this.name,
+      this.isaddingdoctor = false,
       required this.speciality,
       required this.rating,
       required this.review,
@@ -23,10 +25,13 @@ class USimilarDoctor extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Similar Doctor',
-          style: getBoldStyle(color: MyColors.black, fontSize: MyFonts.size16),
-        ),
+        isaddingdoctor == true
+            ? Container()
+            : Text(
+                'Similar Doctor',
+                style: getBoldStyle(
+                    color: MyColors.black, fontSize: MyFonts.size16),
+              ),
         padding10,
         Container(
           height: 117.h,
@@ -35,7 +40,7 @@ class USimilarDoctor extends StatelessWidget {
             borderRadius: BorderRadius.circular(5.r),
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12),
+            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -53,7 +58,7 @@ class USimilarDoctor extends StatelessWidget {
                           color: MyColors.black, fontSize: MyFonts.size18),
                     ),
                     Container(
-                      margin: EdgeInsets.symmetric(vertical: 10.w),
+                      margin: EdgeInsets.symmetric(vertical: 7.w),
                       width: 190.w,
                       height: 2.h,
                       color: MyColors.lightgrey,

@@ -35,7 +35,7 @@ class UPopularDoctorCard extends StatelessWidget {
             Image.asset(
               image,
               height: 92.h,
-              width: 92.w,
+              width: 82.w,
             ),
             SizedBox(width: 10.w),
             Column(
@@ -48,7 +48,7 @@ class UPopularDoctorCard extends StatelessWidget {
                     Text(name,
                         style: getBoldStyle(
                             color: MyColors.black, fontSize: MyFonts.size18)),
-                    SizedBox(width: 35.w),
+                    SizedBox(width: 25.w),
                     IconButton(
                         onPressed: () {},
                         icon: const Icon(

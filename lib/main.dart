@@ -6,7 +6,6 @@ import 'package:idaawee/utils/constants/app_constants.dart';
 import 'package:idaawee/utils/thems/theme.dart';
 
 void main() async {
-
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -39,9 +38,10 @@ class _MyAppState extends ConsumerState<MyApp> {
         return MaterialApp(
           builder: (BuildContext context, Widget? child) {
             final MediaQueryData data = MediaQuery.of(context);
-            //Text is generally big on IOS ro that why we set text scale factor for IOS to 0.9
+
             return MediaQuery(
               data: data.copyWith(
+                  // ignore: deprecated_member_use
                   textScaleFactor:
                       Theme.of(context).platform == TargetPlatform.iOS
                           ? 0.9
@@ -54,7 +54,7 @@ class _MyAppState extends ConsumerState<MyApp> {
           theme: lightThemeData(context),
           themeMode: ThemeMode.light,
           onGenerateRoute: AppRoutes.onGenerateRoute,
-          initialRoute: AppRoutes.userMainMenuScreen,
+          initialRoute: AppRoutes.splashScreen,
         );
       },
     );

@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:idaawee/features/doctor/main_menu/controller/d_main_menu_controller.dart';
+import 'package:idaawee/features/doctor/doctor_main_menu/controller/main_menu_controller.dart';
+
 import '../../../../commons/common_imports/common_libs.dart';
 
 class DBottomBarItem extends ConsumerWidget {
@@ -14,7 +15,10 @@ class DBottomBarItem extends ConsumerWidget {
   final int index;
 
   @override
-  Widget build( BuildContext context, WidgetRef ref,) {
+  Widget build(
+    BuildContext context,
+    WidgetRef ref,
+  ) {
     final dMainMenuCtr = ref.watch(dMainMenuProvider);
 
     return InkWell(
@@ -22,7 +26,7 @@ class DBottomBarItem extends ConsumerWidget {
       child: Container(
         width: 70.w,
         height: 40.h,
-        color:MyColors.bottomBarColor ,
+        color: MyColors.bottomBarColor,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -30,7 +34,8 @@ class DBottomBarItem extends ConsumerWidget {
                 width: 25.w,
                 height: 25.h,
                 color: dMainMenuCtr.index == index
-                    ? MyColors.themebBluishGreyColor: MyColors.grey),
+                    ? MyColors.themebBluishGreyColor
+                    : MyColors.grey),
           ],
         ),
       ),

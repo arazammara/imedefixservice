@@ -1,7 +1,8 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:idaawee/commons/common_imports/common_libs.dart';
-import 'package:idaawee/features/doctor/main_menu/controller/d_main_menu_controller.dart';
+import 'package:idaawee/features/doctor/doctor_main_menu/controller/main_menu_controller.dart';
+
 import 'package:idaawee/features/doctor/main_menu/widgets/d_bottom_bar.dart';
 import 'package:idaawee/utils/constants/assets_manager.dart';
 

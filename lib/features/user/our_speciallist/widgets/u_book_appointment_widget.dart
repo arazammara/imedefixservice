@@ -15,7 +15,7 @@ class UBookAppointmentWidget extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 10.h),
       child: Container(
-        height: 312.h,
+        height: 330.h,
         decoration: BoxDecoration(
           color: MyColors.white,
           borderRadius: BorderRadius.circular(5.r),

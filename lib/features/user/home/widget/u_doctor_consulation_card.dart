@@ -131,7 +131,7 @@ class UDoctorNextAppointmentCard extends StatelessWidget {
                     right: 0,
                     bottom: 0,
                     child: Image.asset(
-                      'assets/images/im1.png',
+                      image,
                       height: 216.h,
                       width: 145.w,
                     )),

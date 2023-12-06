@@ -16,7 +16,7 @@ class UTopSearchWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'How do you feel',
+            'Welcome to Imedifix',
             style: getBoldStyle(
                 color: MyColors.textColor, fontSize: MyFonts.size22),
           ),

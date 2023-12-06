@@ -32,8 +32,7 @@ class OnboardingPageSection extends ConsumerWidget {
               colors: [
             MyColors.appColor1,
             MyColors.appColor,
-          ])
-          ),
+          ])),
       child: Stack(
         children: [
           Center(
@@ -52,7 +51,7 @@ class OnboardingPageSection extends ConsumerWidget {
             child: Image.asset(AppAssets.bgGradient),
           ),
           Positioned(
-            top: 75.h,
+            top: 90.h,
             child: Container(
               height: 450.h,
               width: 295.w,
