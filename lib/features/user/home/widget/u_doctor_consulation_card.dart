@@ -61,16 +61,15 @@ class UDoctorNextAppointmentCard extends StatelessWidget {
                             child: Text(name,
                                 style: getBoldStyle(
                                     color: MyColors.white,
-                                    fontSize: MyFonts.size18)),
+                                    fontSize: MyFonts.size14)),
                           ),
-                          padding4,
                           Container(
                             constraints: BoxConstraints(
                                 maxWidth: 162.w, maxHeight: 48.h),
                             child: Text(specialist,
                                 style: getSemiBoldStyle(
                                     color: MyColors.white,
-                                    fontSize: MyFonts.size14)),
+                                    fontSize: MyFonts.size12)),
                           ),
                           padding20,
                           Container(

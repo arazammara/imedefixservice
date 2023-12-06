@@ -150,7 +150,10 @@ class UBookAppointmentWidget extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: CustomButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(
+                      context, AppRoutes.userPlatinumProviderScreen);
+                },
                 buttonText: 'Book Appointment',
                 buttonHeight: 55.h,
               ),

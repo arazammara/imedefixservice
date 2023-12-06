@@ -1,4 +1,3 @@
-import 'package:idaawee/commons/common_functions/padding.dart';
 import 'package:idaawee/commons/common_imports/common_libs.dart';
 
 class timingpagehiring extends StatefulWidget {
@@ -23,7 +22,7 @@ class _timingpagehiringState extends State<timingpagehiring> {
                 height: 12.h,
                 width: 12.w,
               ),
-              title: Text('Weekly Stats'),
+              title: const Text('Weekly Stats'),
             ),
             Row(
               children: [
@@ -33,26 +32,34 @@ class _timingpagehiringState extends State<timingpagehiring> {
                   .map((e) => Expanded(
                         child: Padding(
                           padding: const EdgeInsets.all(4.0),
-                          child: Container(
-                            height: 50,
-                            decoration: BoxDecoration(
-                                gradient: e != 1
-                                    ? null
-                                    : const LinearGradient(
-                                        colors: [
-                                            MyColors.appColor1,
-                                            MyColors.appColor,
-                                          ],
-                                        begin: Alignment.topLeft,
-                                        end: Alignment.bottomRight),
-                                border: Border.all(),
-                                borderRadius: BorderRadius.circular(100)),
-                            child: Center(
-                              child: Text(
-                                '9:00 Am',
-                                style: getBoldStyle(
-                                    color:
-                                        e != 1 ? Colors.black : Colors.white),
+                          child: GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                weeky = e;
+                              });
+                            },
+                            child: Container(
+                              height: 50,
+                              decoration: BoxDecoration(
+                                  gradient: e != weeky
+                                      ? null
+                                      : const LinearGradient(
+                                          colors: [
+                                              MyColors.appColor1,
+                                              MyColors.appColor,
+                                            ],
+                                          begin: Alignment.topLeft,
+                                          end: Alignment.bottomRight),
+                                  border: Border.all(),
+                                  borderRadius: BorderRadius.circular(100)),
+                              child: Center(
+                                child: Text(
+                                  '9:00 Am',
+                                  style: getBoldStyle(
+                                      color: e != weeky
+                                          ? Colors.black
+                                          : Colors.white),
+                                ),
                               ),
                             ),
                           ),
@@ -66,22 +73,44 @@ class _timingpagehiringState extends State<timingpagehiring> {
                 height: 12.h,
                 width: 12.w,
               ),
-              title: Text('Evening Stats'),
+              title: const Text('Evening Stats'),
             ),
             Row(
-              children: [0, 1]
+              children: [
+                0,
+                1,
+              ]
                   .map((e) => Expanded(
                         child: Padding(
                           padding: const EdgeInsets.all(4.0),
-                          child: Container(
-                            height: 50,
-                            decoration: BoxDecoration(
-                                border: Border.all(),
-                                borderRadius: BorderRadius.circular(100)),
-                            child: Center(
-                              child: Text(
-                                '08:00 AM',
-                                style: getBoldStyle(color: Colors.black),
+                          child: GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                evening = e;
+                              });
+                            },
+                            child: Container(
+                              height: 50,
+                              decoration: BoxDecoration(
+                                  gradient: e != evening
+                                      ? null
+                                      : const LinearGradient(
+                                          colors: [
+                                              MyColors.appColor1,
+                                              MyColors.appColor,
+                                            ],
+                                          begin: Alignment.topLeft,
+                                          end: Alignment.bottomRight),
+                                  border: Border.all(),
+                                  borderRadius: BorderRadius.circular(100)),
+                              child: Center(
+                                child: Text(
+                                  '8:00 Am',
+                                  style: getBoldStyle(
+                                      color: e != evening
+                                          ? Colors.black
+                                          : Colors.white),
+                                ),
                               ),
                             ),
                           ),
@@ -92,4 +121,8 @@ class _timingpagehiringState extends State<timingpagehiring> {
           ],
         ));
   }
+
+  int weeky = 0;
+  int evening = 0;
+  int days = 0;
 }

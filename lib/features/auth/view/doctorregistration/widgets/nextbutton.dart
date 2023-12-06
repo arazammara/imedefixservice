@@ -20,17 +20,22 @@ class NextButton extends StatelessWidget {
             ? Container()
             : Expanded(
                 flex: 1,
-                child: Container(
-                  height: 60,
-                  width: 40.w,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white,
-                      border: Border.all(color: Colors.black12)),
-                  child: const Center(
-                    child: Icon(
-                      Icons.arrow_back_ios,
-                      color: MyColors.black,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Container(
+                    height: 60,
+                    width: 40.w,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white,
+                        border: Border.all(color: Colors.black12)),
+                    child: const Center(
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: MyColors.black,
+                      ),
                     ),
                   ),
                 ),

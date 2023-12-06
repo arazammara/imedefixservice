@@ -134,11 +134,11 @@ class DoctorwalletPoint extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         Positioned(
-          top: -110,
+          top: -120,
           left: 0,
           right: 0,
           child: Container(
-            height: 150,
+            height: 160,
             color: Colors.white.withOpacity(0.30),
             child: Column(
               children: [
@@ -147,7 +147,11 @@ class DoctorwalletPoint extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Image.asset('assets/images/wallepng.png'),
+                      Image.asset(
+                        'assets/images/wallepng.png',
+                        height: 30,
+                        width: 30,
+                      ),
                       Row(
                         children: [
                           Text(
@@ -157,7 +161,7 @@ class DoctorwalletPoint extends StatelessWidget {
                           Text(
                             '\$1354.46',
                             style: getBoldStyle(
-                                color: MyColors.white, fontSize: 32),
+                                color: MyColors.white, fontSize: 23),
                           ),
                         ],
                       ),
@@ -165,7 +169,7 @@ class DoctorwalletPoint extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
+                  padding: const EdgeInsets.only(left: 20, right: 20, top: 5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -178,7 +182,7 @@ class DoctorwalletPoint extends StatelessWidget {
                           Text(
                             '\$1612.458',
                             style: getBoldStyle(
-                                color: MyColors.black, fontSize: 32),
+                                color: MyColors.black, fontSize: 23),
                           ),
                         ],
                       ),

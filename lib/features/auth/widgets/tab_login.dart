@@ -31,12 +31,6 @@ class _TabLoginState extends State<TabLogin> {
         child: Column(
           children: [
             CustomTextField(
-              validatorFn: (value) {
-                if (value!.isEmpty) {
-                  return 'Please enter your email';
-                }
-                return null;
-              },
               leadingIconPath: AppAssets.user,
               texfieldHeight: 60.h,
               controller: emailController,
@@ -49,12 +43,6 @@ class _TabLoginState extends State<TabLogin> {
             ),
             padding10,
             CustomTextField(
-              validatorFn: (value) {
-                if (value!.isEmpty) {
-                  return 'Please enter your password';
-                }
-                return null;
-              },
               leadingIconPath: AppAssets.key,
               texfieldHeight: 60.h,
               controller: passwordController,

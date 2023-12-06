@@ -106,27 +106,46 @@ class _ConsultaionandTimeState extends State<ConsultaionandTime>
                             return Padding(
                               padding: const EdgeInsets.only(
                                   left: 10, right: 10, bottom: 10),
-                              child: Container(
-                                width: 50,
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: MyColors.grey.withOpacity(0.50),
-                                    ),
-                                    borderRadius: BorderRadius.circular(30)),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      weekdaysname[index].toString()[0],
-                                      style: getBoldStyle(
-                                          color: MyColors.grey, fontSize: 22),
-                                    ),
-                                    Text(
-                                      weekdaysname[index],
-                                      style: getBoldStyle(
-                                          color: MyColors.grey, fontSize: 16),
-                                    )
-                                  ],
+                              child: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    selected = index;
+                                  });
+                                },
+                                child: Container(
+                                  width: 50,
+                                  decoration: BoxDecoration(
+                                      gradient: selected == index
+                                          ? const LinearGradient(colors: [
+                                              MyColors.appColor1,
+                                              MyColors.appColor,
+                                            ])
+                                          : null,
+                                      border: Border.all(
+                                        color: MyColors.grey.withOpacity(0.50),
+                                      ),
+                                      borderRadius: BorderRadius.circular(30)),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        weekdaysname[index].toString()[0],
+                                        style: getBoldStyle(
+                                            color: selected == index
+                                                ? Colors.white
+                                                : MyColors.grey,
+                                            fontSize: 22),
+                                      ),
+                                      Text(
+                                        weekdaysname[index],
+                                        style: getBoldStyle(
+                                            color: selected == index
+                                                ? Colors.white
+                                                : MyColors.grey,
+                                            fontSize: 16),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             );
@@ -263,4 +282,5 @@ class _ConsultaionandTimeState extends State<ConsultaionandTime>
   }
 
   final List weekdaysname = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  int selected = 0;
 }
