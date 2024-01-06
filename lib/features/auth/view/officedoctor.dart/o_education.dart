@@ -127,6 +127,7 @@ class Office_EducationAndExeience extends StatelessWidget {
               ),
               padding20,
               NextButton(
+                back: () {},
                 text: 'Next',
                 isbackbuton: true,
                 onPressed: onPressed,

@@ -47,26 +47,26 @@ class UCommonRecordCard extends StatelessWidget {
                     child: Image.asset(
                       status,
                       height: 17.h,
-                      width: 137.w,
+                      width: 117.w,
                     ),
                   ),
                   padding4,
                   Text(
                     name,
                     style: getBoldStyle(
-                        color: MyColors.black, fontSize: MyFonts.size18),
+                        color: MyColors.black, fontSize: MyFonts.size14),
                   ),
                   padding4,
                   Text(
                     speciality,
                     style: getSemiBoldStyle(
-                        color: MyColors.grey, fontSize: MyFonts.size14),
+                        color: MyColors.grey, fontSize: MyFonts.size10),
                   ),
                   padding4,
                   Text(
                     qualification,
                     style: getSemiBoldStyle(
-                        color: MyColors.grey, fontSize: MyFonts.size14),
+                        color: MyColors.grey, fontSize: MyFonts.size10),
                   ),
                 ],
               )

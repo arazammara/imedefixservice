@@ -82,6 +82,20 @@ class _MainMenuScreenState extends ConsumerState<DoctorwalletScreen>
                       Positioned(
                         top: 30.h,
                         left: 0,
+                        child: Padding(
+                            padding: const EdgeInsets.all(18.0),
+                            child: IconButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                icon: Icon(
+                                  Icons.arrow_back_ios,
+                                  color: Colors.white,
+                                ))),
+                      ),
+                      Positioned(
+                        top: 30.h,
+                        left: 0,
                         right: 0,
                         child: Padding(
                           padding: const EdgeInsets.all(18.0),
@@ -261,6 +275,7 @@ class DoctorwalletPoint extends StatelessWidget {
                             return const DoctorWalletListtile();
                           })),
                   NextButton(
+                      back: () {},
                       onPressed: () {
                         Navigator.pushNamed(
                             context, AppRoutes.doctorwalletAmountScreen);

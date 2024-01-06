@@ -7,10 +7,12 @@ class NextButton extends StatelessWidget {
       {super.key,
       required this.onPressed,
       required this.isbackbuton,
+      required this.back,
       required this.text});
   final VoidCallback onPressed;
   final bool isbackbuton;
   final String text;
+  final VoidCallback back;
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +23,7 @@ class NextButton extends StatelessWidget {
             : Expanded(
                 flex: 1,
                 child: GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).pop();
-                  },
+                  onTap: back,
                   child: Container(
                     height: 60,
                     width: 40.w,

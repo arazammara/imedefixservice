@@ -10,7 +10,8 @@ import 'package:idaawee/utils/constants/font_manager.dart';
 import '../../../commons/common_widgets/custom_button.dart';
 
 class TabLogin extends StatefulWidget {
-  const TabLogin({super.key});
+  const TabLogin({super.key, required this.isdoctor});
+  final isdoctor;
 
   @override
   State<TabLogin> createState() => _TabLoginState();
@@ -95,7 +96,12 @@ class _TabLoginState extends State<TabLogin> {
             CustomButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
-                  Navigator.pushNamed(context, AppRoutes.userMainMenuScreen);
+                  if (widget.isdoctor == true) {
+                    Navigator.pushNamed(
+                        context, AppRoutes.udoctormainMainMenuScreen);
+                  } else {
+                    Navigator.pushNamed(context, AppRoutes.userMainMenuScreen);
+                  }
                 }
               },
               buttonText: login,

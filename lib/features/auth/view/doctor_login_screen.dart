@@ -159,7 +159,9 @@ class _DoctorLoginScreenState extends State<DoctorLoginScreen>
                             child: TabBarView(
                           controller: _tabController,
                           children: [
-                            const TabLogin(),
+                            const TabLogin(
+                              isdoctor: true,
+                            ),
                             DoctorTabSignIn(
                               isofficedocor: widget.isofficedocor,
                             )

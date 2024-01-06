@@ -37,20 +37,6 @@ class _MainMenuScreenState extends ConsumerState<DoctorMainMenuScreenMain> {
         body: IndexedStack(
           children: [mainMenuCtr.screens[mainMenuCtr.index]],
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: FloatingActionButton(
-          shape: const CircleBorder(),
-          onPressed: () {
-            mainMenuCtr.setIndex(2);
-          },
-          elevation: 10,
-          backgroundColor: MyColors.white,
-          child: Image.asset(
-            AppAssets.add,
-            width: 25.w,
-            height: 25.h,
-          ),
-        ),
         bottomNavigationBar: BottomAppBar(
           elevation: 10,
           color: MyColors.whiteColor,
@@ -80,9 +66,6 @@ class _MainMenuScreenState extends ConsumerState<DoctorMainMenuScreenMain> {
                   },
                   icon: AppAssets.report,
                   index: 1,
-                ),
-                SizedBox(
-                  width: 40.w,
                 ),
                 BottomBarItems(
                   title: 'Record',

@@ -122,6 +122,7 @@ class DoctorEditProfileScreen extends StatelessWidget {
                   ),
                   padding30,
                   NextButton(
+                    back: () {},
                     text: 'Save Changes',
                     onPressed: onPressed,
                     isbackbuton: false,

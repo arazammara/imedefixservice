@@ -9,7 +9,8 @@ TextStyle _getTextStyle(
   FontWeight fontWeight,
   Color color,
 ) {
-  return GoogleFonts.quicksand(
+  return TextStyle(
+    fontFamily: 'Gilroy',
     color: color,
     fontSize: fontSize.sp,
     fontWeight: fontWeight,

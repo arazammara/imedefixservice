@@ -2,7 +2,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:idaawee/commons/common_imports/common_libs.dart';
 import 'package:idaawee/routes/route_manager.dart';
-import 'package:idaawee/utils/constants/app_constants.dart';
 import 'package:idaawee/utils/thems/theme.dart';
 
 void main() async {
@@ -24,33 +23,29 @@ class _MyAppState extends ConsumerState<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    //screenUtil package to make design responsive
+
     return ScreenUtilInit(
-      designSize:
-          const Size(AppConstants.screenWidget, AppConstants.screenHeight),
+      designSize: Size(size.width, size.height),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp(
           builder: (BuildContext context, Widget? child) {
             final MediaQueryData data = MediaQuery.of(context);
-
             return MediaQuery(
               data: data.copyWith(
                   // ignore: deprecated_member_use
-                  textScaleFactor:
-                      Theme.of(context).platform == TargetPlatform.iOS
-                          ? 0.9
-                          : 1),
+                  textScaleFactor: 1),
               child: child!,
             );
           },
           debugShowCheckedModeBanner: false,
-          title: 'idaawee',
+          title: 'astrology',
           theme: lightThemeData(context),
           themeMode: ThemeMode.light,
           onGenerateRoute: AppRoutes.onGenerateRoute,

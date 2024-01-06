@@ -108,6 +108,7 @@ class WalletSummaryPage extends StatelessWidget {
               padding16,
               padding16,
               NextButton(
+                  back: () {},
                   onPressed: () {
                     Navigator.pushNamed(context, AppRoutes.paymntSuccessfull);
                   },

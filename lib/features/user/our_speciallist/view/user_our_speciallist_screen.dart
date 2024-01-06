@@ -10,7 +10,11 @@ class UserOurSpecialListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const CommonAppBar(appBarTitle: 'Our Specialization'),
+        appBar: CommonAppBar(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            appBarTitle: 'Our Specialization'),
         body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
@@ -18,7 +22,7 @@ class UserOurSpecialListScreen extends StatelessWidget {
           ),
           child: Padding(
             padding: const EdgeInsets.all(18.0),
-            child: Column(
+            child: ListView(
               children: [
                 CustomTextField(
                   validatorFn: (value) {

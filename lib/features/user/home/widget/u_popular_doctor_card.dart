@@ -37,7 +37,7 @@ class UPopularDoctorCard extends StatelessWidget {
               height: 92.h,
               width: 82.w,
             ),
-            SizedBox(width: 10.w),
+            SizedBox(width: 5.w),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,7 +48,7 @@ class UPopularDoctorCard extends StatelessWidget {
                     Text(name,
                         style: getBoldStyle(
                             color: MyColors.black, fontSize: MyFonts.size18)),
-                    SizedBox(width: 25.w),
+                    SizedBox(width: 6.w),
                     IconButton(
                         onPressed: () {},
                         icon: const Icon(
@@ -64,22 +64,22 @@ class UPopularDoctorCard extends StatelessWidget {
                 ),
                 Text(speciality,
                     style: getSemiBoldStyle(
-                        color: MyColors.grey, fontSize: MyFonts.size14)),
+                        color: MyColors.grey, fontSize: MyFonts.size10)),
                 Row(
                   children: [
                     Icon(
                       Icons.star,
                       color: MyColors.ratingColor,
-                      size: 16.h,
+                      size: 13.h,
                     ),
                     SizedBox(width: 5.w),
                     Text(rating.toString(),
                         style: getMediumStyle(
-                            color: MyColors.black, fontSize: MyFonts.size14)),
-                    SizedBox(width: 3.w),
+                            color: MyColors.black, fontSize: MyFonts.size12)),
+                    SizedBox(width: 1.w),
                     Text(review,
                         style: getMediumStyle(
-                            color: MyColors.grey, fontSize: MyFonts.size14)),
+                            color: MyColors.grey, fontSize: MyFonts.size12)),
                   ],
                 ),
               ],

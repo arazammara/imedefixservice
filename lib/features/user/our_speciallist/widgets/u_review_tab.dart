@@ -27,7 +27,7 @@ class _UReviewTabviewState extends State<UReviewTabview> {
               padding: EdgeInsets.zero,
               shrinkWrap: true,
               itemCount: isExpanded ? 10 : 4,
-              physics: const BouncingScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
                   padding: EdgeInsets.only(bottom: 10.h),

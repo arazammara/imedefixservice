@@ -140,6 +140,7 @@ class _Office_ConsultaionandTimeState extends State<Office_ConsultaionandTime>
                     ),
               padding20,
               NextButton(
+                back: () {},
                 text: 'Next',
                 isbackbuton: true,
                 onPressed: widget.onPressed,

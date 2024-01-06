@@ -7,9 +7,8 @@ import 'package:idaawee/routes/route_manager.dart';
 import 'package:idaawee/utils/constants/font_manager.dart';
 
 class DoctorProfile extends StatelessWidget {
-  DoctorProfile({
-    super.key,
-  });
+  DoctorProfile({super.key, required this.onPressedback});
+  final VoidCallback onPressedback;
 
   final TextEditingController namecontroller = TextEditingController();
 
@@ -34,7 +33,7 @@ class DoctorProfile extends StatelessWidget {
                   DefaultTabController(
                     length: 2,
                     child: SizedBox(
-                      height: 400.h,
+                      height: 350.h,
                       child: SingleChildScrollView(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -181,6 +180,7 @@ class DoctorProfile extends StatelessWidget {
                   ),
                   NextButton(
                     text: 'Next',
+                    back: onPressedback,
                     isbackbuton: true,
                     onPressed: () {
                       Navigator.pushNamed(
@@ -200,7 +200,7 @@ class DoctorProfile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                height: 157.h,
+                height: 137.h,
                 width: 140,
                 decoration: BoxDecoration(
                   image: const DecorationImage(

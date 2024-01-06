@@ -115,6 +115,7 @@ class _BookDoctorPageState extends State<BookDoctorPage> {
                   )),
               padding20,
               NextButton(
+                  back: () {},
                   onPressed: () {
                     Navigator.pushNamed(context, AppRoutes.addPaymentScreen);
                   },

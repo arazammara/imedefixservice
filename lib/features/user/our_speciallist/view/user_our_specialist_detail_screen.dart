@@ -13,7 +13,7 @@ class UserOurSpecialistDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: CommonAppBar(
         onPressed: () {
-          Navigator.pop(context);
+          Navigator.of(context).pop();
         },
         appBarTitle: 'Our Specialization',
       ),

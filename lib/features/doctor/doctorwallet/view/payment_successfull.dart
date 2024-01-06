@@ -62,9 +62,13 @@ class PaymntSuccessfull extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: NextButton(
+                  back: () {},
                   onPressed: () {
-                    Navigator.pushNamed(
-                        context, AppRoutes.udoctormainMainMenuScreen);
+                    Navigator.of(context).pop();
+                    Navigator.of(context).pop();
+                    Navigator.of(context).pop();
+                    Navigator.of(context).pop();
+                    Navigator.of(context).pop();
                   },
                   isbackbuton: false,
                   text: 'Back to Home'),

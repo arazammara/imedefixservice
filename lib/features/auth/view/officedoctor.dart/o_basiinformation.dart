@@ -106,6 +106,7 @@ class Office_BasicInformation extends StatelessWidget {
                   ),
                 ),
                 NextButton(
+                  back: () {},
                   text: 'Next',
                   isbackbuton: true,
                   onPressed: onPressed,

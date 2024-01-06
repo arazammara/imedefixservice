@@ -10,7 +10,7 @@ class UserPlatinumProviderScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: 1.sh,
+        height: 2.sh,
         width: 1.sw,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -50,7 +50,7 @@ class UserPlatinumProviderScreen extends StatelessWidget {
                         icon: const Icon(Icons.arrow_back_ios,
                             color: MyColors.white),
                         onPressed: () {
-                          Navigator.pop(context);
+                          Navigator.of(context).pop();
                         },
                       ),
                       Text(
@@ -67,23 +67,29 @@ class UserPlatinumProviderScreen extends StatelessWidget {
             ),
             // main container
             Padding(
-              padding: EdgeInsets.only(top: 120.h),
+              padding: EdgeInsets.only(top: 150.h),
               child: const UPlatinumProviderBodySession(),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 115.h, left: 110.w),
-              child: Container(
-                height: 167.h,
-                width: 167.w,
-                decoration: BoxDecoration(
-                  image: const DecorationImage(
-                      image: AssetImage('assets/images/img.png'),
-                      fit: BoxFit.cover),
-                  border: Border.all(color: MyColors.white, width: 1.5),
-                  borderRadius: BorderRadius.circular(5.r),
-                ),
+              padding: EdgeInsets.only(top: 105.h, left: 0.w, right: 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    height: 137.h,
+                    width: 157.w,
+                    decoration: BoxDecoration(
+                      image: const DecorationImage(
+                          image: AssetImage('assets/images/img.png'),
+                          fit: BoxFit.fill),
+                      border: Border.all(color: MyColors.white, width: 1.5),
+                      borderRadius: BorderRadius.circular(5.r),
+                    ),
+                  ),
+                ],
               ),
             ),
+
             Padding(
               padding: EdgeInsets.only(top: 215.h, right: 25.w),
               child: Row(
@@ -100,7 +106,7 @@ class UserPlatinumProviderScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 250.h),
+              padding: EdgeInsets.only(top: 200.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

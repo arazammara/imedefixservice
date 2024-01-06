@@ -156,7 +156,9 @@ class _UserLoginScreenState extends State<UserLoginScreen>
                             child: TabBarView(
                           controller: _tabController,
                           children: const [
-                            TabLogin(),
+                            TabLogin(
+                              isdoctor: false,
+                            ),
                             TabSignIn(),
                           ],
                         ))

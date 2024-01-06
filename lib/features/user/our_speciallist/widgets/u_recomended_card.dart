@@ -9,7 +9,7 @@ class RecomondedCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 136.h,
+      height: 170.h,
       decoration: BoxDecoration(
         color: MyColors.white,
         borderRadius: BorderRadius.circular(5.r),

@@ -28,13 +28,14 @@ class Office_DoctorProfile extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(9.0),
             child: Container(
+              color: MyColors.white.withOpacity(0.9),
               child: Column(
                 children: [
                   padding80,
                   DefaultTabController(
                     length: 2,
                     child: SizedBox(
-                      height: 400.h,
+                      height: 350.h,
                       child: SingleChildScrollView(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -49,7 +50,7 @@ class Office_DoctorProfile extends StatelessWidget {
                               child: Column(
                                 children: [
                                   Text(
-                                    'Dr. Maria Elena',
+                                    'Dr. Maria Eleaa',
                                     style: getBoldStyle(
                                         color: MyColors.black,
                                         fontSize: MyFonts.size20),
@@ -239,6 +240,7 @@ class Office_DoctorProfile extends StatelessWidget {
                     ),
                   ),
                   NextButton(
+                    back: () {},
                     text: 'Next',
                     isbackbuton: true,
                     onPressed: () {
@@ -259,7 +261,7 @@ class Office_DoctorProfile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                height: 157.h,
+                height: 137.h,
                 width: 140,
                 decoration: BoxDecoration(
                   image: const DecorationImage(

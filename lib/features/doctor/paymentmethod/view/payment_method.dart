@@ -46,6 +46,7 @@ class AddPaymentMethod extends StatelessWidget {
               ),
               Expanded(child: Container()),
               NextButton(
+                  back: () {},
                   onPressed: () {
                     Navigator.of(context).pop();
                   },

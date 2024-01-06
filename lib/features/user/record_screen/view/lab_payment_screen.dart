@@ -23,7 +23,10 @@ class LabPaymentScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: const CommonAppBar(
+      appBar: CommonAppBar(
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
         appBarTitle: payment,
       ),
       body: Padding(

@@ -67,7 +67,7 @@ class _UAllSpecialListState extends State<UAllSpecialList> {
                 Text(
                   _specialList[index],
                   style: getSemiBoldStyle(
-                      color: MyColors.black, fontSize: MyFonts.size12),
+                      color: MyColors.black, fontSize: MyFonts.size10),
                 )
               ],
             ),

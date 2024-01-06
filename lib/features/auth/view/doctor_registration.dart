@@ -97,9 +97,25 @@ class _DoctorRegistrationState extends State<DoctorRegistration>
                                   height: 50,
                                   width: MediaQuery.of(context).size.width,
                                   child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [0, 1, 2, 3]
-                                        .map((e) => Expanded(
-                                              flex: selectdpage == e ? 3 : 1,
+                                        .map((e) => AnimatedContainer(
+                                              duration:
+                                                  const Duration(seconds: 1),
+                                              width: e == 3
+                                                  ? MediaQuery.of(context)
+                                                          .size
+                                                          .width /
+                                                      3
+                                                  : selectdpage == e
+                                                      ? MediaQuery.of(context)
+                                                              .size
+                                                              .width /
+                                                          2
+                                                      : MediaQuery.of(context)
+                                                              .size
+                                                              .width /
+                                                          6.5,
                                               child: Row(
                                                 children: [
                                                   CircleAvatar(
@@ -128,7 +144,7 @@ class _DoctorRegistrationState extends State<DoctorRegistration>
                                                               color: MyColors
                                                                   .white,
                                                               fontSize: MyFonts
-                                                                  .size12),
+                                                                  .size10),
                                                         )
                                                       : Container(),
                                                   e == selectdpage
@@ -172,10 +188,15 @@ class _DoctorRegistrationState extends State<DoctorRegistration>
   }
 
   late List doctorregistrationTabsPages = [
-    BasicInformation(onPressed: () => changescreen(1)),
-    EducationAndExeience(onPressed: () => changescreen(2)),
-    ConsultaionandTime(onPressed: () => changescreen(3)),
-    DoctorProfile()
+    BasicInformation(
+      onPressed: () => changescreen(1),
+      onPressedback: () => changescreen(0),
+    ),
+    EducationAndExeience(
+        onPressed: () => changescreen(2), onPressedback: () => changescreen(1)),
+    ConsultaionandTime(
+        onPressed: () => changescreen(3), onPressedback: () => changescreen(2)),
+    DoctorProfile(onPressedback: () => changescreen(3))
   ];
 
   // ignore: non_constant_identifier_names

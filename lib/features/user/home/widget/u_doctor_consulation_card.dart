@@ -28,7 +28,7 @@ class UDoctorNextAppointmentCard extends StatelessWidget {
         children: [
           SizedBox(
             height: 216.h,
-            width: 335.w,
+            width: double.infinity,
             child: Stack(
               children: [
                 Positioned(

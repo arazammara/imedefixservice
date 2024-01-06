@@ -83,8 +83,8 @@ class UAppointmentCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(5.r),
                   child: Image.asset(
                     'assets/images/img.png',
-                    height: 72.h,
-                    width: 72.w,
+                    height: 52.h,
+                    width: 52.w,
                   ),
                 ),
               ],
@@ -97,7 +97,7 @@ class UAppointmentCard extends StatelessWidget {
                       CustomButton(
                           textColor: MyColors.grey,
                           buttonHeight: 38.h,
-                          buttonWidth: 157.w,
+                          buttonWidth: 137.w,
                           backColor: MyColors.white,
                           borderColor: MyColors.grey.withOpacity(0.6),
                           onPressed: () {},
@@ -105,7 +105,7 @@ class UAppointmentCard extends StatelessWidget {
                       CustomButton(
                           textColor: MyColors.white,
                           buttonHeight: 38.h,
-                          buttonWidth: 157.w,
+                          buttonWidth: 137.w,
                           onPressed: () {},
                           buttonText:
                               reschedule != null ? 'Reschedule' : 'Book Again'),
@@ -114,7 +114,7 @@ class UAppointmentCard extends StatelessWidget {
                 : CustomButton(
                     textColor: MyColors.grey,
                     buttonHeight: 38.h,
-                    buttonWidth: 322.w,
+                    buttonWidth: 302.w,
                     backColor: MyColors.white,
                     borderColor: MyColors.grey.withOpacity(0.6),
                     onPressed: () {},

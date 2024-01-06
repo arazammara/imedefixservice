@@ -11,9 +11,8 @@ import 'package:idaawee/utils/constants/assets_manager.dart';
 import 'package:idaawee/utils/constants/font_manager.dart';
 
 class DoctorProfileScreen extends ConsumerStatefulWidget {
-  const DoctorProfileScreen({
-    super.key,
-  });
+  const DoctorProfileScreen({super.key, this.isuser = false});
+  final bool isuser;
 
   @override
   ConsumerState<DoctorProfileScreen> createState() => _MainMenuScreenState();
@@ -113,6 +112,7 @@ class _MainMenuScreenState extends ConsumerState<DoctorProfileScreen>
                   flex: 6,
                   child: mainMenuCtr.isedit == false
                       ? buildDoctorProfileFields(
+                          isuser: widget.isuser,
                           onPressed: () => mainMenuCtr.setIndex(true),
                         )
                       : DoctorEditProfileScreen(
@@ -127,8 +127,10 @@ class _MainMenuScreenState extends ConsumerState<DoctorProfileScreen>
 }
 
 class buildDoctorProfileFields extends StatelessWidget {
-  buildDoctorProfileFields({super.key, required this.onPressed});
+  buildDoctorProfileFields(
+      {super.key, required this.onPressed, this.isuser = false});
   final VoidCallback onPressed;
+  final bool isuser;
 
   final TextEditingController namecontroller = TextEditingController();
 
@@ -151,11 +153,13 @@ class buildDoctorProfileFields extends StatelessWidget {
                 children: [
                   padding35,
                   Text(
-                    'Dr. Maria Elena',
+                    isuser == false ? 'Alex Carry' : 'Dr. Maria Elena',
                     style: getBoldStyle(color: Colors.black, fontSize: 20),
                   ),
                   Text(
-                    'mariaelena786@outlook.com',
+                    isuser == false
+                        ? 'yasgg@gmail.com'
+                        : 'mariaelena786@outlook.com',
                     style: getBoldStyle(color: Colors.grey, fontSize: 13),
                   ),
                   DoctorProfileTile(
@@ -208,7 +212,9 @@ class buildDoctorProfileFields extends StatelessWidget {
         ),
         CommonpositionPicture(
           onPressed: onPressed,
-          picturepath: AppAssets.doctorpro,
+          picturepath: isuser == false
+              ? 'assets/images/whiteman.png'
+              : AppAssets.doctorpro,
         )
       ],
     );

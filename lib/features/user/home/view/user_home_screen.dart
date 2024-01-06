@@ -18,7 +18,7 @@ class UserHomeScreen extends ConsumerWidget {
     return Scaffold(
       appBar: const CommonAppBar(
         isBackButton: false,
-        appBarTitle: 'Handwerker',
+        appBarTitle: '',
       ),
       body: Container(
         decoration: const BoxDecoration(

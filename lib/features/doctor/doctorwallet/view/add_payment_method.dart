@@ -34,7 +34,7 @@ class AddPaymentScreen extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  height: 150,
+                  height: 170,
                   color: const Color(0xff5EEF8F),
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
@@ -137,8 +137,8 @@ class AddPaymentScreen extends StatelessWidget {
                   subTitle: '',
                 ),
                 padding16,
-                padding16,
                 NextButton(
+                    back: () {},
                     onPressed: () {
                       Navigator.pushNamed(context, AppRoutes.walletSummaryPage);
                     },

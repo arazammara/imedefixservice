@@ -14,7 +14,7 @@ class UAboutDoctorTabview extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 18.w),
       child: SingleChildScrollView(
-        // physics: const NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -193,9 +193,6 @@ class UAboutDoctorTabview extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Container(
-                          width: 45.w,
-                        ),
                       ],
                     ),
                   ],
@@ -205,6 +202,7 @@ class UAboutDoctorTabview extends StatelessWidget {
             isdoctor == true
                 ? Container()
                 : NextButton(
+                    back: () {},
                     onPressed: () {
                       Navigator.pushNamed(context, AppRoutes.bookDoctorPage);
                     },

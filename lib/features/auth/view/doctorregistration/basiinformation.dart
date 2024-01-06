@@ -5,8 +5,10 @@ import 'package:idaawee/features/auth/view/doctorregistration/widgets/nextbutton
 import 'package:idaawee/utils/constants/font_manager.dart';
 
 class BasicInformation extends StatelessWidget {
-  BasicInformation({super.key, required this.onPressed});
+  BasicInformation(
+      {super.key, required this.onPressed, required this.onPressedback});
   final VoidCallback onPressed;
+  final VoidCallback onPressedback;
 
   final TextEditingController namecontroller = TextEditingController();
 
@@ -90,6 +92,7 @@ class BasicInformation extends StatelessWidget {
                   ),
                 ),
                 NextButton(
+                  back: onPressedback,
                   text: 'Next',
                   isbackbuton: true,
                   onPressed: onPressed,

@@ -95,71 +95,79 @@ class CompleteDoctorProfile extends StatelessWidget {
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(9.0),
-                            child: SingleChildScrollView(
+                            child: Container(
+                              color: MyColors.white.withOpacity(0.9),
                               child: Column(
                                 children: [
                                   padding80,
                                   DefaultTabController(
                                     length: 2,
                                     child: SizedBox(
-                                      height: 700.h,
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          Container(
-                                            height: 700.h,
-                                            width: 1.sw,
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(25.r),
-                                              color: MyColors.white
-                                                  .withOpacity(0.9),
+                                      height: 350.h,
+                                      child: SingleChildScrollView(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            Container(
+                                              height: 700.h,
+                                              width: 1.sw,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(25.r),
+                                                color: MyColors.white
+                                                    .withOpacity(0.9),
+                                              ),
+                                              child: Column(
+                                                children: [
+                                                  Text(
+                                                    'Dr. Maria Elena',
+                                                    style: getBoldStyle(
+                                                        color: MyColors.black,
+                                                        fontSize:
+                                                            MyFonts.size20),
+                                                  ),
+                                                  padding6,
+                                                  Text(
+                                                    'Psychologist, M.B.B.S., F.C.P.S \n(Psychology)',
+                                                    textAlign: TextAlign.center,
+                                                    style: getSemiBoldStyle(
+                                                        color: MyColors.grey,
+                                                        fontSize:
+                                                            MyFonts.size14),
+                                                  ),
+                                                  padding80,
+                                                  Image.asset(
+                                                      'assets/images/Group.png'),
+                                                  padding10,
+                                                  const Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Text(
+                                                          'Status: Under Review'),
+                                                    ],
+                                                  ),
+                                                  padding80,
+                                                  Text(
+                                                    'We will review your profile to activate your account and publish your profile online. Meanwhile, Feel Free to Reach out to us at www.imedifix.com',
+                                                    textAlign: TextAlign.center,
+                                                    style: getSemiBoldStyle(
+                                                        color: MyColors.grey,
+                                                        fontSize:
+                                                            MyFonts.size14),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
-                                            child: Column(
-                                              children: [
-                                                Text(
-                                                  'Dr. Maria Elena',
-                                                  style: getBoldStyle(
-                                                      color: MyColors.black,
-                                                      fontSize: MyFonts.size20),
-                                                ),
-                                                padding6,
-                                                Text(
-                                                  'Psychologist, M.B.B.S., F.C.P.S \n(Psychology)',
-                                                  textAlign: TextAlign.center,
-                                                  style: getSemiBoldStyle(
-                                                      color: MyColors.grey,
-                                                      fontSize: MyFonts.size14),
-                                                ),
-                                                padding80,
-                                                Image.asset(
-                                                    'assets/images/Group.png'),
-                                                padding10,
-                                                const Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Text(
-                                                        'Status: Under Review'),
-                                                  ],
-                                                ),
-                                                padding80,
-                                                Text(
-                                                  'We will review your profile to activate your account and publish your profile online. Meanwhile, Feel Free to Reach out to us at www.imedifix.com',
-                                                  textAlign: TextAlign.center,
-                                                  style: getSemiBoldStyle(
-                                                      color: MyColors.grey,
-                                                      fontSize: MyFonts.size14),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),
                                   NextButton(
+                                    back: () {},
                                     text: 'Next',
                                     isbackbuton: true,
                                     onPressed: () {
@@ -180,7 +188,7 @@ class CompleteDoctorProfile extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Container(
-                                height: 157.h,
+                                height: 137.h,
                                 width: 140,
                                 decoration: BoxDecoration(
                                   image: const DecorationImage(

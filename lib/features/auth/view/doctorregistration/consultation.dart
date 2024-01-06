@@ -5,8 +5,10 @@ import 'package:idaawee/features/auth/view/doctorregistration/widgets/nextbutton
 import 'package:idaawee/utils/constants/font_manager.dart';
 
 class ConsultaionandTime extends StatefulWidget {
-  const ConsultaionandTime({super.key, required this.onPressed});
+  const ConsultaionandTime(
+      {super.key, required this.onPressed, required this.onPressedback});
   final VoidCallback onPressed;
+  final VoidCallback onPressedback;
 
   @override
   State<ConsultaionandTime> createState() => _ConsultaionandTimeState();
@@ -270,6 +272,7 @@ class _ConsultaionandTimeState extends State<ConsultaionandTime>
               ),
               padding20,
               NextButton(
+                back: widget.onPressedback,
                 text: 'Next',
                 isbackbuton: true,
                 onPressed: widget.onPressed,
