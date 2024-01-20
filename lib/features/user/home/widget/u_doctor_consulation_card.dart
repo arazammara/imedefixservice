@@ -35,7 +35,7 @@ class UDoctorNextAppointmentCard extends StatelessWidget {
                   bottom: 0,
                   child: Container(
                     height: 188.h,
-                    width: 335.w,
+                    width: 600,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.r),
                       image: const DecorationImage(
@@ -49,80 +49,86 @@ class UDoctorNextAppointmentCard extends StatelessWidget {
                             MyColors.appColor,
                           ]),
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(18.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            constraints: BoxConstraints(
-                                maxWidth: 200.w, maxHeight: 48.h),
-                            child: Text(name,
-                                style: getBoldStyle(
-                                    color: MyColors.white,
-                                    fontSize: MyFonts.size14)),
-                          ),
-                          Container(
-                            constraints: BoxConstraints(
-                                maxWidth: 162.w, maxHeight: 48.h),
-                            child: Text(specialist,
-                                style: getSemiBoldStyle(
-                                    color: MyColors.white,
-                                    fontSize: MyFonts.size12)),
-                          ),
-                          padding20,
-                          Container(
-                            height: 71.h,
-                            width: 157.w,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5.r),
-                              color: MyColors.white.withOpacity(0.3),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Row(
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(18.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                constraints: BoxConstraints(
+                                    maxWidth: 400.w, maxHeight: 48.h),
+                                child: Text(name,
+                                    style: getBoldStyle(
+                                        color: MyColors.white,
+                                        fontSize: MyFonts.size14)),
+                              ),
+                              Container(
+                                constraints: BoxConstraints(
+                                    maxWidth: 402.w, maxHeight: 48.h),
+                                child: Text(specialist,
+                                    style: getSemiBoldStyle(
+                                        color: MyColors.white,
+                                        fontSize: MyFonts.size12)),
+                              ),
+                              padding20,
+                              Container(
+                                height: 71.h,
+                                width: 157.w,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5.r),
+                                  color: MyColors.white.withOpacity(0.3),
+                                ),
+                                child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    Image.asset(
-                                      AppAssets.cal,
-                                      height: 13.h,
-                                      width: 13.h,
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Image.asset(
+                                          AppAssets.cal,
+                                          height: 13.h,
+                                          width: 13.h,
+                                        ),
+                                        SizedBox(width: 5.w),
+                                        Text(
+                                          date,
+                                          style: getSemiBoldStyle(
+                                              color: MyColors.white,
+                                              fontSize: MyFonts.size14),
+                                        )
+                                      ],
                                     ),
-                                    SizedBox(width: 5.w),
-                                    Text(
-                                      date,
-                                      style: getSemiBoldStyle(
-                                          color: MyColors.white,
-                                          fontSize: MyFonts.size14),
-                                    )
+                                    padding4,
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Image.asset(
+                                          AppAssets.clock,
+                                          height: 13.h,
+                                          width: 13.h,
+                                        ),
+                                        SizedBox(width: 5.w),
+                                        Text(
+                                          time,
+                                          style: getSemiBoldStyle(
+                                              color: MyColors.white,
+                                              fontSize: MyFonts.size14),
+                                        )
+                                      ],
+                                    ),
                                   ],
                                 ),
-                                padding4,
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Image.asset(
-                                      AppAssets.clock,
-                                      height: 13.h,
-                                      width: 13.h,
-                                    ),
-                                    SizedBox(width: 5.w),
-                                    Text(
-                                      time,
-                                      style: getSemiBoldStyle(
-                                          color: MyColors.white,
-                                          fontSize: MyFonts.size14),
-                                    )
-                                  ],
-                                ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

@@ -63,6 +63,7 @@ class UOurSpecializationWidget extends ConsumerWidget {
                   mainAxisExtent: 113.h),
               itemBuilder: (context, index) {
                 return InkWell(
+                  onHover: (hovering) {},
                   onTap: () {},
                   child: Column(
                     children: [

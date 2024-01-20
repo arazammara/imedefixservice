@@ -19,7 +19,6 @@ class _UReviewTabviewState extends State<UReviewTabview> {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 18.w),
       child: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -75,6 +74,9 @@ class _UReviewTabviewState extends State<UReviewTabview> {
               review: '452',
               onPress: () {},
             ),
+            Container(
+              height: 300,
+            )
           ],
         ),
       ),

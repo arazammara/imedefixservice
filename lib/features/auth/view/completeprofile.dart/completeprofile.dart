@@ -138,7 +138,7 @@ class CompleteDoctorProfile extends StatelessWidget {
                                                   ),
                                                   padding80,
                                                   Image.asset(
-                                                      'assets/images/Group.png'),
+                                                      'assets/images/animation.gif'),
                                                   padding10,
                                                   const Row(
                                                     mainAxisAlignment:
